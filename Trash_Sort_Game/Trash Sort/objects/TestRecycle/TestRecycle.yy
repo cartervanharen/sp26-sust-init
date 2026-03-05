@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"testing",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"TestRecycle",
+  "eventList":[],
   "managed":true,
-  "name":"testing",
+  "name":"TestRecycle",
   "overriddenProperties":[],
   "parent":{
-    "name":"Trash Sort",
-    "path":"Trash Sort.yyp",
+    "name":"Recycle",
+    "path":"folders/Objects/Recycle.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"RecycleParent",
+    "path":"objects/RecycleParent/RecycleParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
