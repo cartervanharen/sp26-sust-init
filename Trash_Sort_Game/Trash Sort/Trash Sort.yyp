@@ -15,10 +15,11 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.0.207",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"Trash Sort",
   "resources":[
+    {"id":{"name":"testing","path":"objects/testing/testing.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "resourceType":"GMProject",
