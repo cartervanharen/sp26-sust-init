@@ -1,1 +1,1 @@
-global.type = recycle
+global.type = "recycle"

@@ -1,1 +1,1 @@
-global.type = organic
+global.type = "organic"

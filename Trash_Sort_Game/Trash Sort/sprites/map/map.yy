@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Assests",
-    "path":"folders/Assests.yy",
+    "name":"Map",
+    "path":"folders/Assests/Map.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

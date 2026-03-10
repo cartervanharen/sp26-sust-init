@@ -1,1 +1,1 @@
-global.type = special
+global.type = "special"

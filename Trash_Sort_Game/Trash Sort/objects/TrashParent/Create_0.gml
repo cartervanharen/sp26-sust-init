@@ -1,1 +1,1 @@
-global.type = trash
+global.type = "trash"
