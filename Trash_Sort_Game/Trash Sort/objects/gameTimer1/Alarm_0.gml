@@ -14,7 +14,14 @@
 		global.dropping = false
 		global.gamedone = true;
 		global.tutorial = false
-		global.day +=1;
+		if(global.day + 1 = 4){
+			global.lvl +=1;
+			if(day%2 = 0){
+				global.friendNum +=1
+			}
+		}else{
+			global.day += 1
+		}
 		room_goto(Map)
 		
 	//reset alarm to keep counting down seconds
@@ -39,6 +46,20 @@
 				global.fullness[i] = global.fullness[i]+1
 			}
 		}
+		//if you have friends, lower trash lvl
+		for (var j = 0; j<global.friendNum; j++){
+			building = irandom_range(0,8)
+			
+			if((global.fullness[building] - 1) <= 0){
+				global.fullness[building] = 0
+			//set fullness to current - lowering amount
+			}else{
+				global.fullness[building] = global.fullness[building] -1
+		
+			}
+			
+		}
+		
 		room_goto(Map)
 	
 	}

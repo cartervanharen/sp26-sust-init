@@ -5,7 +5,7 @@ global.dropping = false
 global.item = noone
 
 //how full of trash is each location
-//imporant to put it at 2x the size
+//important to put it at 2x the size
 //order is SCC (99,834), OSS (267,826), OWS (367,906), ASC (653,480), AQU (869,522),
 //MCH (1172,819), JRC(1058,552), ARC(837,270), OEC (1161,294)
 global.fullness = [0,0,1,1,1,1,2,2,3]

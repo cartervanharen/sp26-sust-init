@@ -34,7 +34,7 @@ if(instance_number(tcParent) <9){
 	curr.image_yscale =2
 	
 	//JRC
-	curr = instance_create_layer(1058,552,"trashcans",trashcanArr[global.fullness[6]])
+	curr = instance_create_layer(1058,520,"trashcans",trashcanArr[global.fullness[6]])
 	curr.image_xscale =2
 	curr.image_yscale =2
 	
