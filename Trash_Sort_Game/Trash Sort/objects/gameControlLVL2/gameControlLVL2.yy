@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"trashcanSummoner",
+  "%Name":"gameControlLVL2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"trashcanSummoner",
+  "name":"gameControlLVL2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Map",
-    "path":"folders/Objects/Map.yy",
+    "name":"GameLogic",
+    "path":"folders/Objects/GameLogic.yy",
   },
   "parentObjectId":null,
   "persistent":false,

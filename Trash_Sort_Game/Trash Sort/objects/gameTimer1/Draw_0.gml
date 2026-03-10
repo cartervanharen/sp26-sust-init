@@ -1,3 +1,4 @@
+//draw timer top left corner
 draw_set_colour(c_black)
 draw_set_alpha(.75)
 draw_rectangle(0,0,1280,960,false)

@@ -1,0 +1,1 @@
+trashcanArr = [full0,full1,full2,full3]
