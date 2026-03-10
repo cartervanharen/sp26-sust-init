@@ -25,7 +25,7 @@ if(global.day == 1){
 }else {
 	global.showNew = false;
 }
-global.friendNum = 0;
+global.friendNum = 2;
 //should screen fade black and current opactiy 
 global.fade = false
 global.alpha =0
