@@ -1,1 +1,8 @@
-draw_self();
+draw_set_alpha(1)
+draw_set_color(#8348ad)
+draw_roundrect(x, y, x + sprite_width, y + sprite_height, false)
+draw_set_color(c_white)
+draw_set_font(font)
+draw_set_halign(fa_middle)
+draw_set_valign(fa_middle)
+draw_text(x + sprite_width / 2, y + sprite_height / 2, "Start")

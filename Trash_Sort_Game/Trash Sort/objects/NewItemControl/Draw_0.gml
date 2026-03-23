@@ -1,5 +1,5 @@
 draw_set_alpha(1)
-draw_set_color(#90409a)
+draw_set_color(#8348ad)
 draw_set_font(font)
 draw_set_halign(fa_middle)
 draw_set_valign(fa_top)

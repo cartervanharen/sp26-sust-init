@@ -3,7 +3,7 @@ space = keyboard_check_pressed(vk_space)
 
 //setting up font and color
 draw_set_alpha(1)
-draw_set_color(#90409a)
+draw_set_color(#8348ad)
 draw_set_font(font)
 
 //writing score on screen

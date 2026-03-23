@@ -4,7 +4,7 @@ draw_set_alpha(.75)
 draw_rectangle(0,0,1280,960,false)
 
 draw_set_alpha(1)
-draw_set_color(#90409a)
+draw_set_color(#8348ad)
 draw_set_font(font)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
