@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //3
-ASCitems = [burger,chicken,compcup,napkin,glass,ketchup,utensils]
+ASCitems = [burger,chicken,napkin,glass,ketchup,utensils]
 ASCdes = "Anderson Student Center (ASC) is the place to go to get some food or chill out. \n Click space to see common items" 

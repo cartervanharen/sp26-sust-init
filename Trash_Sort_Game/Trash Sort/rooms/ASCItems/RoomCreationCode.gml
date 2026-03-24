@@ -12,7 +12,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //3
-ASCitems = [burger,chicken,compcup,napkin,glass,ketchup,utensils]
+ASCitems = [burger,chicken,napkin,glass,ketchup,utensils]
 global.tp = ASC
 draw_set_alpha(.5)
 draw_set_colour(c_black)

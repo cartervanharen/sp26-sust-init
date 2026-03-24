@@ -12,7 +12,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //7
-ARCitems = [banana,can,gum,candywrapper,chip]
+ARCitems = [banana,can,gum,candywrapper,chip,teabag]
 global.tp = ARC
 draw_set_alpha(.5)
 draw_set_colour(c_black)

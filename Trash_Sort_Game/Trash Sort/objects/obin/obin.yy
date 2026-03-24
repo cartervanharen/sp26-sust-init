@@ -12,8 +12,8 @@
     "path":"folders/Objects/Organic.yy",
   },
   "parentObjectId":{
-    "name":"OrganicParent",
-    "path":"objects/OrganicParent/OrganicParent.yy",
+    "name":"binParents",
+    "path":"objects/binParents/binParents.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

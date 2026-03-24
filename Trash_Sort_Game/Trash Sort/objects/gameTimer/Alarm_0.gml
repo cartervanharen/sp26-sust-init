@@ -41,6 +41,10 @@ if(timer!=0){
 		global.totalcorr += gameControl.curScore
 		global.totalincorr += gameControl.mistakes
 		global.friendNum +=1;
-		room_goto(Map)
+		if(gameControl.mistakes >0){
+			room_goto(WrongSortReason)
+		}else{
+			room_goto(Map)
+		}
 	
 	}
