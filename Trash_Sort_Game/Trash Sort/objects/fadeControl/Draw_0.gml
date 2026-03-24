@@ -1,3 +1,4 @@
+
 //if moving to different location/room will be true
 if (global.fade){
 	//draw black square the gets progressivly darked
@@ -10,25 +11,6 @@ if (global.fade){
 		if(room == Title){
 			global.fade = false
 			room_goto(Map)
-		}else if (global.showNew){
-			if(global.lvl == 1){
-				global.fade = false
-				room_goto(NewItemsLVL1)
-				
-			}else if(global.lvl == 2){
-				global.fade = false
-				room_goto(NewItemsLVL2)
-				
-			}else if(global.lvl == 3){
-				global.fade = false
-				room_goto(NewItemsLVL3)
-				
-			}else{
-				global.fade = false
-				room_goto(NewItemsLVL4)
-				
-			}
-			
 		}else{
 			global.fade = false
 			room_goto(global.tp)

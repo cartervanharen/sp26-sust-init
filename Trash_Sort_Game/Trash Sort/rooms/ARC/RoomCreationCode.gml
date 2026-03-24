@@ -1,14 +1,13 @@
-global.arrayNum = 8
+global.arrayNum = 7
 global.gamedone = false
-if (global.lvl == 1){
-	instance_create_layer(0,0,"gamehigh",gameControlLVL1)
-	
-}else if (global.lvl == 2){
-	instance_create_layer(0,0,"gamehigh",gameControlLVL2)
-
-}else if (global.lvl == 3){
-	instance_create_layer(0,0,"gamehigh",gameControlLVL3)
-	
-}else{
-	instance_create_layer(0,0,"gamehigh",gameControlLVL4)
+instance_create_layer(0,0,"gamehigh",gameControl)
+if(global.fullness[global.arrayNum ] == 0){
+	global.fallSpeed = 1;
+}else if(global.fullness[global.arrayNum ] == 1){
+	global.fallSpeed = 3;
+}else if(global.fullness[global.arrayNum ] == 2){
+	global.fallSpeed = 4;
+}else {
+	global.fallSpeed = 6;
 }
+

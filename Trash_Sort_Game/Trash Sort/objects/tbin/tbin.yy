@@ -12,8 +12,8 @@
     "path":"folders/Objects/Trash.yy",
   },
   "parentObjectId":{
-    "name":"binParents",
-    "path":"objects/binParents/binParents.yy",
+    "name":"TrashParent",
+    "path":"objects/TrashParent/TrashParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

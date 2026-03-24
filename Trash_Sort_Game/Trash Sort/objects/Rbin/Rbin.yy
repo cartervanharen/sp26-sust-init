@@ -12,8 +12,8 @@
     "path":"folders/Objects/Recycle.yy",
   },
   "parentObjectId":{
-    "name":"binParents",
-    "path":"objects/binParents/binParents.yy",
+    "name":"RecycleParent",
+    "path":"objects/RecycleParent/RecycleParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -1,53 +1,29 @@
-if(place_meeting(x,y,global.item) && instance_exists(gameControlLVL1)){
-	//if item meets the right bin
-	if(global.type = type){
-		gameControlLVL1.curScore +=1
-		global.dropping = false
-		instance_destroy(global.item)
-		
-	//if item meets the wrong bin
-	}else{
-		global.dropping = false
-		gameControlLVL1.mistakes +=1
-		instance_destroy(global.item)
-	}
-}else if(place_meeting(x,y,global.item) && instance_exists(gameControlLVL2)){
-	//if item meets the right bin
-	if(global.type = type){
-		gameControlLVL2.curScore +=1
-		global.dropping = false
-		instance_destroy(global.item)
-		
-	//if item meets the wrong bin
-	}else{
-		global.dropping = false
-		gameControlLVL2.mistakes +=1
-		instance_destroy(global.item)
-	}
-}else if(place_meeting(x,y,global.item) && instance_exists(gameControlLVL3)){
-	//if item meets the right bin
-	if(global.type = type){
-		gameControlLVL3.curScore +=1
-		global.dropping = false
-		instance_destroy(global.item)
-		
-	//if item meets the wrong bin
-	}else{
-		global.dropping = false
-		gameControlLVL3.mistakes +=1
-		instance_destroy(global.item)
-	}
-}else if(place_meeting(x,y,global.item) && instance_exists(gameControlLVL4)){
-	//if item meets the right bin
-	if(global.type = type){
-		gameControlLVL4.curScore +=1
-		global.dropping = false
-		instance_destroy(global.item)
-		
-	//if item meets the wrong bin
-	}else{
-		global.dropping = false
-		gameControlLVL4.mistakes +=1
-		instance_destroy(global.item)
-	}
+if (place_meeting(x, y, global.item) && instance_exists(gameControl)) {
+
+    var obj = global.item.object_index;
+
+    // correct bin
+    if (global.type == type) {
+
+        gameControl.curScore += 1;
+        global.dropping = false;
+
+        instance_create_layer(0, 0, "gamehigh", correct);
+        instance_destroy(global.item);
+
+    // wrong bin
+    } else {
+
+        global.dropping = false;
+        gameControl.mistakes += 1;
+
+        instance_create_layer(0, 0, "gamehigh", incorrect);
+
+		//store incorrectly stored items for later
+        if (!array_contains(global.badSort, obj)) {
+            array_push(global.badSort, obj);
+        }
+
+        instance_destroy(global.item);
+    }
 }

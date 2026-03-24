@@ -12,8 +12,8 @@
     "path":"folders/Objects/Special.yy",
   },
   "parentObjectId":{
-    "name":"binParents",
-    "path":"objects/binParents/binParents.yy",
+    "name":"SpecialParent",
+    "path":"objects/SpecialParent/SpecialParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

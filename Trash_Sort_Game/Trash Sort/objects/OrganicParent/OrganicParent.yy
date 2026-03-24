@@ -11,7 +11,10 @@
     "name":"parents",
     "path":"folders/Objects/parents.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"binParents",
+    "path":"objects/binParents/binParents.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

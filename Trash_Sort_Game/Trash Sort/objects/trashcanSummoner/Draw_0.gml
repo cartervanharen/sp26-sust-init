@@ -23,8 +23,8 @@ if(instance_number(tcParent) <9){
 	curr.image_xscale =2
 	curr.image_yscale =2
 	
-	//AQU
-	curr = instance_create_layer(869,522,"trashcans",trashcanArr[global.fullness[4]])
+	//Frey
+	curr = instance_create_layer(1152,160,"trashcans",trashcanArr[global.fullness[4]])
 	curr.image_xscale =2
 	curr.image_yscale =2
 	
@@ -45,6 +45,11 @@ if(instance_number(tcParent) <9){
 	
 	//OEC
 	curr = instance_create_layer(1161,294,"trashcans",trashcanArr[global.fullness[8]])
+	curr.image_xscale =2
+	curr.image_yscale =2
+	
+	//Library (1120,448)
+	curr = instance_create_layer(1120,448,"trashcans",trashcanArr[global.fullness[9]])
 	curr.image_xscale =2
 	curr.image_yscale =2
 	

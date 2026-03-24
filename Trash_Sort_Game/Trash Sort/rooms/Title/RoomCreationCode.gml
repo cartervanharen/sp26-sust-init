@@ -3,12 +3,15 @@ global.type = noone
 global.dropping = false
 //item that is being dropped
 global.item = noone
+global.dropthese = []
+global.buildingdesc = " "
 
 //how full of trash is each location
-//important to put it at 2x the size
-//order is SCC (99,834), OSS (267,826), OWS (367,906), ASC (653,480), AQU (869,522),
-//MCH (1172,819), JRC(1058,552), ARC(837,270), OEC (1161,294)
-global.fullness = [0,0,1,1,1,1,2,2,3]
+//important to put trashcan at 2x the size
+//order is 0 SCC (99,834), 1 OSS (267,826), 2 OWS (367,906), 3 ASC (653,480), 4 FreyHall (1152,160),
+//5 MCH (1172,819), 6 JRC(1058,552), 7 ARC(837,270), 8 OEC (1161,294), 9 Library (1120,448)
+global.fullness = [0,1,1,1,1,2,2,1,0,1]
+global.visited = [false,false,false,false,false,false,false,false,false,false]
 //which building in the arr currently in
 global.arrayNum = -1
 
@@ -19,12 +22,6 @@ global.fallSpeed = 1
 //current day, should be 4 per lvl
 global.day = 1;
 
-//new item show if first day
-if(global.day == 1){
-	global.showNew = true
-}else {
-	global.showNew = false;
-}
 global.friendNum = 0;
 //should screen fade black and current opactiy 
 global.fade = false
@@ -35,6 +32,11 @@ global.tp = noone
 
 //if a game is finished
 global.gamedone = true
+
+//
+global.newGame = true
+
+global.badSort = []
 
 randomise()
 
