@@ -10,7 +10,7 @@ global.buildingdesc = " "
 //important to put trashcan at 2x the size
 //order is 0 SCC (99,834), 1 OSS (267,826), 2 OWS (367,906), 3 ASC (653,480), 4 FreyHall (1152,160),
 //5 MCH (1172,819), 6 JRC(1058,552), 7 ARC(837,270), 8 OEC (1161,294), 9 Library (1120,448)
-global.fullness = [0,1,1,1,1,2,2,1,0,1]
+global.fullness = [0,1,2,2,2,2,2,1,0,1]
 global.visited = [false,false,false,false,false,false,false,false,false,false]
 //which building in the arr currently in
 global.arrayNum = -1
@@ -37,6 +37,12 @@ global.gamedone = true
 global.newGame = true
 
 global.badSort = []
+
+global.totalcorr = 0;
+global.totalincorr = 0;
+
+global.inDiag = true;
+
 
 randomise()
 

@@ -11,3 +11,6 @@ if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 6;
 }
 
+//7
+ARCitems = [banana,can,gum,candywrapper,chip]
+ARCdes = "Anderson Athletic and Recreation Complex (ARC) is where to go to work out or play/see a sports game\n Click space to see common items" 

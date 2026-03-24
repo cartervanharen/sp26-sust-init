@@ -11,3 +11,6 @@ if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 6;
 }
 
+//4
+Freyitems = [coffee,scraps,battery,plasticbag,lightbulb,takeout,waxpaper,cardboard,bottles,glass]
+Freydes = "Frey is one of the residence halls at St Thomas.\n Click space to see common items" 

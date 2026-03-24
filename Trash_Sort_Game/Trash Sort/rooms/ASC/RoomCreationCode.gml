@@ -11,3 +11,6 @@ if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 6;
 }
 
+//3
+ASCitems = [burger,chicken,compcup,napkin,glass,ketchup,utensils]
+ASCdes = "Anderson Student Center (ASC) is the place to go to get some food or chill out. \n Click space to see common items" 

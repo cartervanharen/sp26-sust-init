@@ -1,2 +1,2 @@
 //which room to tp to if clicked
-building = OEC
+building = OECItems

@@ -11,3 +11,6 @@ if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 6;
 }
 
+//0
+SCCitems = [writepaper,gum,can,candywrapper,banana]
+SCCdes = "Schoenecker Center (SCC) has classes related to the arts, sciences, and engineering \n Click space to see common items" 

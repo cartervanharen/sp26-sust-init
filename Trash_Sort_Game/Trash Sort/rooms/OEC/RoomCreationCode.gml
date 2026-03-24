@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //8 gum,candywrapper,chip,bottles,printpaper,apple,compcup
-global.dropthese = [apple]
+global.dropthese = [gum,candywrapper,chip,bottles,printpaper,apple,compcup]
 global.buildingdesc = "O'Shaughnessy Educational Center (OEC) the place for communications, media, economics and foreign languages classes .\n Click space to see common items" 

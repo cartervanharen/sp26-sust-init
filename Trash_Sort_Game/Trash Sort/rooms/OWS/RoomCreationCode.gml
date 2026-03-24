@@ -11,3 +11,6 @@ if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 6;
 }
 
+//2
+OWSitems = [printpaper,gum,can,candywrapper,orange]
+OWSdes = "Owens Science Hall (OWS) is mainly for science related classes .\n Click space to see common items" 
