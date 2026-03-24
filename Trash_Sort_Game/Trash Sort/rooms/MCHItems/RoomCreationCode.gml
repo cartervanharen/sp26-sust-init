@@ -12,9 +12,9 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //5
-MCHitems = [writepaper,gum,can,candywrapper,apple]
+global.dropthese = [writepaper,gum,can,candywrapper,apple]
 global.tp = MCH
 draw_set_alpha(.5)
 draw_set_colour(c_black)
 draw_set_font(font)
-MCHdes = "McNeely Hall (MCH) is the place for business related classes.\n Click space to see common items " 
+global.buildingdesc = "McNeely Hall (MCH) is the place for business related classes.\n Click space to see common items " 

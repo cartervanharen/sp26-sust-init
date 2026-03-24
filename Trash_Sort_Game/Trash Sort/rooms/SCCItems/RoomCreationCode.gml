@@ -12,9 +12,9 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //0
-SCCitems = [writepaper,gum,can,candywrapper,banana]
+global.dropthese = [writepaper,gum,can,candywrapper,banana]
 global.tp = SCC
 draw_set_alpha(.5)
 draw_set_colour(c_black)
 draw_set_font(font)
-SCCdes = "Schoenecker Center (SCC) has classes related to the arts, sciences, and engineering \n Click space to see common items" 
+global.buildingdesc = "Schoenecker Center (SCC) has classes related to the arts, sciences, and engineering \n Click space to see common items" 

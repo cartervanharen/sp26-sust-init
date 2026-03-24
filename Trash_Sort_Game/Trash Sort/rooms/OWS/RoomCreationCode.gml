@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //2
-OWSitems = [printpaper,gum,can,candywrapper,orange]
-OWSdes = "Owens Science Hall (OWS) is mainly for science related classes .\n Click space to see common items" 
+global.dropthese = [printpaper,gum,can,candywrapper,orange]
+global.buildingdesc = "Owens Science Hall (OWS) is mainly for science related classes .\n Click space to see common items" 

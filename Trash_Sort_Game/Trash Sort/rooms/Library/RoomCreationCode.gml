@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //9 OSF
-Libitems = [apple,gum,chip,can,paper,candywrapper]
-Libdes = "O'Shaughnessy-Frey Library Center (OSF) is the main library at St Thomas.\n Click space to see common items" 
+global.dropthese = [apple,gum,chip,can,paper,candywrapper]
+global.buildingdesc = "O'Shaughnessy-Frey Library Center (OSF) is the main library at St Thomas.\n Click space to see common items" 

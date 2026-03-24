@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //7
-ARCitems = [banana,can,gum,candywrapper,chip,teabag]
-ARCdes = "Anderson Athletic and Recreation Complex (ARC) is where to go to work out or play/see a sports game\n Click space to see common items" 
+global.dropthese = [banana,can,gum,candywrapper,chip,teabag]
+global.buildingdesc = "Anderson Athletic and Recreation Complex (ARC) is where to go to work out or play/see a sports game\n Click space to see common items" 

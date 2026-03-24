@@ -64,6 +64,7 @@
     {"id":{"name":"drawrectangle","path":"objects/drawrectangle/drawrectangle.yy",},},
     {"id":{"name":"endless1","path":"objects/endless1/endless1.yy",},},
     {"id":{"name":"endless2","path":"objects/endless2/endless2.yy",},},
+    {"id":{"name":"endScreen","path":"objects/endScreen/endScreen.yy",},},
     {"id":{"name":"fadeControl","path":"objects/fadeControl/fadeControl.yy",},},
     {"id":{"name":"flowers","path":"objects/flowers/flowers.yy",},},
     {"id":{"name":"full0","path":"objects/full0/full0.yy",},},

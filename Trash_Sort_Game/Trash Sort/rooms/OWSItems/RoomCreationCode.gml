@@ -12,9 +12,9 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //2
-OWSitems = [printpaper,gum,can,candywrapper,orange]
+global.dropthese = [printpaper,gum,can,candywrapper,orange]
 global.tp = OWS
 draw_set_alpha(.5)
 draw_set_colour(c_black)
 draw_set_font(font)
-OWSdes = "Owens Science Hall (OWS) is mainly for science related classes .\n Click space to see common items" 
+global.buildingdesc = "Owens Science Hall (OWS) is mainly for science related classes .\n Click space to see common items" 

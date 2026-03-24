@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //4
-Freyitems = [coffee,scraps,battery,lightbulb,takeout,cardboard]
-Freydes = "Frey is one of the residence halls at St Thomas.\n Click space to see common items" 
+global.dropthese = [coffee,scraps,battery,lightbulb,takeout,cardboard]
+global.buildingdesc = "Frey is one of the residence halls at St Thomas.\n Click space to see common items" 

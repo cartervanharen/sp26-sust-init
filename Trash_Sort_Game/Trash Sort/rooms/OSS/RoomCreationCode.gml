@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //1
-OSSitems = [writepaper,gum,can,candywrapper,strawberry]
-OSSdes = "O'Shaughnessy Science Hall has classes relating to math, computer science, and other sciences. \n Click space to see common items " 
+global.dropthese = [writepaper,gum,can,candywrapper,strawberry]
+global.buildingdesc = "O'Shaughnessy Science Hall has classes relating to math, computer science, and other sciences. \n Click space to see common items " 

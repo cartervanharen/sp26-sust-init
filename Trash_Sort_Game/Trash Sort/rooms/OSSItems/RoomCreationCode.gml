@@ -12,9 +12,9 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //1
-OSSitems = [writepaper,gum,can,candywrapper,strawberry]
+global.dropthese = [writepaper,gum,can,candywrapper,strawberry]
 global.tp = OEC
 draw_set_alpha(.5)
 draw_set_colour(c_black)
 draw_set_font(font)
-OSSdes = "O'Shaughnessy Science Hall has classes relating to math, computer science, and other sciences. \n Click space to see common items " 
+global.buildingdesc = "O'Shaughnessy Science Hall has classes relating to math, computer science, and other sciences. \n Click space to see common items " 

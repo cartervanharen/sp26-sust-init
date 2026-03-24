@@ -1,4 +1,4 @@
-timer = 5
+timer = 20
 //60 is equal to 1 second
 alarm[0] = 60
 

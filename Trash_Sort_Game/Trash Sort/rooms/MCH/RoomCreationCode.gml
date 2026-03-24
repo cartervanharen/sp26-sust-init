@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //5
-MCHitems = [writepaper,gum,can,candywrapper,apple]
-MCHdes = "McNeely Hall (MCH) is the place for business related classes.\n Click space to see common items " 
+global.dropthese = [writepaper,gum,can,candywrapper,apple]
+global.buildingdesc = "McNeely Hall (MCH) is the place for business related classes.\n Click space to see common items " 

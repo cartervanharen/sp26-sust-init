@@ -12,9 +12,9 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //4
-Freyitems = [coffee,scraps,battery,lightbulb,takeout,cardboard]
+global.dropthese = [coffee,scraps,battery,lightbulb,takeout,cardboard]
 global.tp = Frey
 draw_set_alpha(.5)
 draw_set_colour(c_black)
 draw_set_font(font)
-Freydes = "Frey is one of the residence halls at St Thomas.\n Click space to see common items" 
+global.buildingdesc = "Frey is one of the residence halls at St Thomas.\n Click space to see common items" 
