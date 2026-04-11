@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"trashg",
-    "path":"sprites/trashg/trashg.yy",
+    "name":"specialrec",
+    "path":"sprites/specialrec/specialrec.yy",
   },
   "spriteMaskId":null,
   "visible":true,

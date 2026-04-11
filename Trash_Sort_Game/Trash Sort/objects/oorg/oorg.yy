@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"trashg",
-    "path":"sprites/trashg/trashg.yy",
+    "name":"organic",
+    "path":"sprites/organic/organic.yy",
   },
   "spriteMaskId":null,
   "visible":true,

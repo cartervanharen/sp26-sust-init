@@ -1,5 +1,5 @@
 draw_set_alpha(1)
-draw_set_color(#510c76)
+draw_set_color(#4c9c2e)
 draw_roundrect(x, y, x + sprite_width, y + sprite_height, false)
 draw_set_color(c_white)
 draw_set_font(font)

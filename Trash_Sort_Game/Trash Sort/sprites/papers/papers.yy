@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"653baba7-0420-46f4-b9d8-62638fb2628e","name":"653baba7-0420-46f4-b9d8-62638fb2628e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7366034e-8b2a-464b-b438-668420e40df0","name":"7366034e-8b2a-464b-b438-668420e40df0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":434,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c309bf78-5e5a-468d-8c70-3d69f6d1b0e2","blendMode":0,"displayName":"default","isLocked":false,"name":"c309bf78-5e5a-468d-8c70-3d69f6d1b0e2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f85aebd8-c07b-4cb9-a3c5-632e8ac7765f","blendMode":0,"displayName":"default","isLocked":false,"name":"f85aebd8-c07b-4cb9-a3c5-632e8ac7765f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"papers",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"653baba7-0420-46f4-b9d8-62638fb2628e","path":"sprites/papers/papers.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f18f569c-8fc0-4977-94cb-35c44648f6b6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7366034e-8b2a-464b-b438-668420e40df0","path":"sprites/papers/papers.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"31c570ab-c9e4-410b-9b34-0ad45df19172","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

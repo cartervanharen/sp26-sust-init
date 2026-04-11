@@ -1,0 +1,5 @@
+draw_set_color(#510c76)
+draw_set_font(font)
+draw_set_halign(fa_middle)
+draw_set_valign(fa_middle)
+draw_text(x + sprite_width / 2, y + sprite_height / 2, "UST TRASH SORT")

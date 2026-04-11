@@ -8,10 +8,9 @@ global.buildingdesc = " "
 
 //how full of trash is each location
 //important to put trashcan at 2x the size
-//order is 0 SCC (99,834), 1 OSS (267,826), 2 OWS (367,906), 3 ASC (653,480), 4 FreyHall (1152,160),
-//5 MCH (1172,819), 6 JRC(1058,552), 7 ARC(837,270), 8 OEC (1161,294), 9 Library (1120,448)
-global.fullness = [0,1,2,2,2,2,2,1,0,1]
-global.visited = [false,false,false,false,false,false,false,false,false,false]
+//0 ASC (158,745), 1 FreyHall (1129,110), 2 MUR (898,333), 3 JRC(931,854),
+//4 ARC(518,343), 5 OEC (1110,374), 6 Library (1110,681)
+global.fullness = [1,1,2,2,3,0,3]
 //which building in the arr currently in
 global.arrayNum = -1
 
@@ -19,10 +18,7 @@ global.arrayNum = -1
 global.tutorial = true
 global.lvl = 1
 global.fallSpeed = 1
-//current day, should be 4 per lvl
-global.day = 1;
 
-global.friendNum = 0;
 //should screen fade black and current opactiy 
 global.fade = false
 global.alpha =0
@@ -42,6 +38,9 @@ global.totalcorr = 0;
 global.totalincorr = 0;
 
 global.inDiag = true;
+
+global.showAfter = true
+global.hasSpecial = false
 
 
 randomise()

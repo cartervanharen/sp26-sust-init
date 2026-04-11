@@ -1,19 +1,20 @@
-global.arrayNum = 8
+global.arrayNum = 5
+global.tutorial = false
 global.gamedone = false
 if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 1;
 }else if(global.fullness[global.arrayNum ] == 1){
-	global.fallSpeed = 3;
+	global.fallSpeed = 2;
 }else if(global.fullness[global.arrayNum ] == 2){
 	global.fallSpeed = 4;
 }else {
-	global.fallSpeed = 6;
+	global.fallSpeed = 5;
 }
 
 //8 gum,candywrapper,chip,bottles,printpaper,apple,compcup
-global.dropthese = [gum,candywrapper,glass,printpaper,apple,compcup]
-global.buildingdesc = "O'Shaughnessy Educational Center (OEC) the place for communications, media, economics and foreign languages classes .\n\n\n\n\n\n Click space to start game" 
+global.dropthese = [gum,candywrapper,chip,can,glass,writepaper,apple,compcup,tissue]
+global.buildingdesc = "O'Shaughnessy Educational Center (OEC) the place for communications, media, economics and foreign languages classes .\n Click space to see what items to expect" 
 global.tp = OEC
 draw_set_alpha(.5)
-draw_set_colour(c_black)
+draw_set_colour(#52C415)
 draw_set_font(font)

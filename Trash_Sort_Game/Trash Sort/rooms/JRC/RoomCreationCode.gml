@@ -1,16 +1,15 @@
-global.arrayNum = 6
+global.arrayNum = 3
 global.gamedone = false
 instance_create_layer(0,0,"gamehigh",gameControl)
 if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 1;
 }else if(global.fullness[global.arrayNum ] == 1){
-	global.fallSpeed = 3;
+	global.fallSpeed = 2;
 }else if(global.fullness[global.arrayNum ] == 2){
 	global.fallSpeed = 4;
 }else {
-	global.fallSpeed = 6;
+	global.fallSpeed = 5;
 }
-
 //6
 global.dropthese = [writepaper,gum,can,candywrapper,orange]
 global.buildingdesc = "John Roach Center (JRC) is the place for libral arts related classes .\n Click space to see common items" 

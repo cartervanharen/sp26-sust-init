@@ -23,7 +23,7 @@ recycleNum = random_range(0,1)
 recycleArr = [paper,cardboard,milkcarton,bottles,tincan,glass]
 
 organNum = random_range(0,3)
-organArr = [burger,apple,scraps,chicken,napkin,tissue,plate,cupsleeve,compcup,orgfork,coffee,teabag,flowers]
+organArr = [burger,apple,scraps,chicken,napkin,tissue,compcup,orgfork,coffee,teabag,flowers]
 
 specialNum = random_range(0,0)
 specialArr = [battery,inkcart,lightbulb,plasticbag]
