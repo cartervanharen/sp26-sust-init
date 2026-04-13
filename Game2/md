@@ -1,0 +1,118 @@
+# Fridge Sorting Game README
+
+## Project Overview
+This project is a Phaser.js educational game where the player must decide where food belongs: on a specific fridge shelf, in a drawer, in the freezer, in the door, or not in the fridge at all.
+
+The game is meant to feel simple and intuitive, but it should also teach real food storage rules. The player should learn that different foods belong in different areas because of temperature, contamination risk, freshness, and food safety.
+
+This README is meant to give coding AI full project context so it can help with individual tasks while still understanding the full game vision.
+
+---
+
+## Tech Stack
+- Framework: Phaser.js
+- Language: JavaScript
+- Style: Modular, data-driven where possible
+- Goal: Easy to expand with more foods, rules, levels, and UI features later
+
+---
+
+## Core Game Concept
+The player sees a fridge layout with clearly defined zones. Food items appear and the player drags them into the correct location.
+
+Possible destinations include:
+- Top shelf
+- Middle shelf
+- Bottom shelf
+- Crisper drawer
+- Door
+- Freezer
+- Outside / pantry / counter
+
+Some foods belong in the fridge, some belong in specific zones, and some should not be refrigerated at all.
+
+Examples:
+- Milk should go on a shelf, not in the door
+- Raw meat should go on the bottom shelf
+- Vegetables should go in the crisper drawer
+- Condiments can go in the door
+- Bread usually should stay outside the fridge
+- Some fruits may or may not belong in the fridge depending on the rule set used
+
+---
+
+## Main Learning Goals
+- Teach proper food storage habits
+- Show why correct placement matters
+- Make the game feel educational without being boring
+- Reinforce learning through feedback and repetition
+
+---
+
+## Core Gameplay Loop
+1. A food item appears
+2. The player clicks and drags it
+3. The player drops it into a fridge zone or outside area
+4. The game checks whether the placement is correct
+5. The player receives immediate feedback
+6. Score and progress update
+7. More items appear until the level ends
+
+---
+
+## Fridge Zones
+These are the main zones the game should support.
+
+### Top Shelf
+Usually for leftovers, ready-to-eat foods, and foods that do not need protection from raw meat drips.
+
+### Middle Shelf
+Usually for dairy and stable refrigerated items like milk and yogurt.
+
+### Bottom Shelf
+Best place for raw meat because it reduces contamination risk if anything leaks.
+
+### Crisper Drawer
+Best for fruits and vegetables, depending on the exact item and simplified rule set.
+
+### Door
+Warmest part of the fridge because it gets opened often. Best for condiments, not for highly perishable foods like milk or eggs if realism is prioritized.
+
+### Freezer
+For frozen foods.
+
+### Outside / Pantry
+For foods that do not need refrigeration, like bread, some whole fruits, certain vegetables, and shelf-stable items.
+
+---
+
+## Example Food Rules
+These are sample rules and can expand later.
+
+- Milk -> Middle shelf
+- Eggs -> Shelf, not door if realism is emphasized
+- Raw chicken -> Bottom shelf
+- Yogurt -> Middle shelf
+- Butter -> Door or shelf depending on rule design
+- Ketchup -> Door
+- Lettuce -> Crisper drawer
+- Apples -> Crisper drawer or outside depending on simplified design
+- Bread -> Outside
+- Ice cream -> Freezer
+- Frozen pizza -> Freezer
+
+---
+
+## Suggested Data Model
+
+### Food Item Example
+```js
+{
+  id: "milk",
+  name: "Milk",
+  category: "dairy",
+  validZones: ["middle_shelf"],
+  invalidZones: ["door", "bottom_shelf", "outside"],
+  requiresRefrigeration: true,
+  explanation: "Milk should stay in a cold, stable part of the fridge, not the door where temperature changes often."
+}
