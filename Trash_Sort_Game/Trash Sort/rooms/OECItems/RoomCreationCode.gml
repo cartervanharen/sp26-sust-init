@@ -15,6 +15,7 @@ if(global.fullness[global.arrayNum ] == 0){
 global.dropthese = [gum,candywrapper,chip,can,glass,writepaper,apple,compcup,tissue]
 global.buildingdesc = "O'Shaughnessy Educational Center (OEC) the place for communications, media, economics and foreign languages classes .\n Click space to see what items to expect" 
 global.tp = OEC
+global.hasSpecial = false
 draw_set_alpha(.5)
 draw_set_colour(#52C415)
 draw_set_font(font)

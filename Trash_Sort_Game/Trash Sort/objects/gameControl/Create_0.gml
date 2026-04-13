@@ -8,25 +8,25 @@ start = false
 global.dropping = false
 randnum = irandom(array_length(global.dropthese)-1)
 
-
+//will be used if special trash is there to line up
+if(global.hasSpecial){
 //Starting above which bin
 startingDrop = random_range(1,4)
 locX = 480
 //what array should it pull objects from
 endingLoc = random_range(1,4)
 
-//what random object should be pulled
-trashNum = random_range(0,1)
-trashArr = [chip,gum,takeout,waxpaper,ketchup,utensils]
-
-recycleNum = random_range(0,1)
-recycleArr = [paper,cardboard,milkcarton,bottles,tincan,glass]
-
-organNum = random_range(0,3)
-organArr = [burger,apple,scraps,chicken,napkin,tissue,compcup,orgfork,coffee,teabag,flowers]
-
-specialNum = random_range(0,0)
-specialArr = [battery,inkcart,lightbulb,plasticbag]
+//otherwise use to to line up
+}else{
+	
+	//Starting above which bin
+startingDrop = random_range(1,4)
+locX = 639
+//what array should it pull objects from
+endingLoc = random_range(1,4)
+	
+	
+}
 
 //quickdrop if space is clicked
 space = false

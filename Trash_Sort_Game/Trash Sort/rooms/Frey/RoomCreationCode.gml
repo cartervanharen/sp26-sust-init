@@ -12,5 +12,6 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //4
-global.dropthese = [coffee,scraps,battery,lightbulb,takeout,cardboard]
+global.hasSpecial = true
+global.dropthese = [takeout, utensils, milkcarton, cardboard, scraps, coffee, lightbulb, battery]
 global.buildingdesc = "Frey is one of the residence halls at St Thomas.\n Click space to see common items" 

@@ -12,5 +12,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //5
-global.dropthese = [writepaper,gum,can,candywrapper,apple]
-global.buildingdesc = "McNeely Hall (MCH) is the place for business related classes.\n Click space to see common items " 
+
+global.hasSpecial = true
+global.dropthese = [waxpaper, takeout, cardboard, milkcarton, scraps, tissue, plasticbag, battery]
+global.buildingdesc = "Murphy-Herrick Center contain the campus store, classes, and a residence hall up top. Next to the campus store is the special recycling bin! the\n Click space to see common items " 

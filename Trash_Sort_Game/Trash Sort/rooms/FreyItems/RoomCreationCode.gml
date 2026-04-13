@@ -11,9 +11,9 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //4
-global.dropthese = [coffee,scraps,battery,lightbulb,takeout,cardboard]
+draw_set_halign(fa_center)
+draw_set_valign(fa_top)
+global.hasSpecial = true
+global.dropthese = [takeout, utensils, bottles, cardboard, scraps, coffee, lightbulb, battery]
 global.tp = Frey
-draw_set_alpha(.5)
-draw_set_colour(#52C415)
-draw_set_font(font)
 global.buildingdesc = "Frey is one of the residence halls at St Thomas.\n Click space to see common items" 

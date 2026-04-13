@@ -1,3 +1,4 @@
+//if the tutorial hasnt been played, delete all other cans but OEC 
 if(global.tutorial){
 	
 	instance_destroy(tcParent)

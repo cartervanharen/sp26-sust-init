@@ -11,9 +11,10 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //5
-global.dropthese = [writepaper,gum,can,candywrapper,apple]
-global.tp = MUR
+global.dropthese = [gum, chip, cardboard, paper, orange, tissue, plasticbag, battery]
+global.tp = MHC
 draw_set_alpha(.5)
 draw_set_colour(#52C415)
 draw_set_font(font)
-global.buildingdesc = "McNeely Hall (MCH) is the place for business related classes.\n Click space to see common items " 
+global.hasSpecial= true
+global.buildingdesc = "Murphy-Herrick Center contain the campus store, classes, and a residence hall up top. Next to the campus store is the special recycling bin!\n Click space to see common items " 

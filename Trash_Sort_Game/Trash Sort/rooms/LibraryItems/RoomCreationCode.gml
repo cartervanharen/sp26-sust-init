@@ -11,9 +11,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //9 OSF
-global.dropthese = [apple,gum,chip,can,paper,candywrapper]
+global.dropthese = [gum,candywrapper,chip, printpaper, can, writepaper, compcup, apple, teabag ]
 global.tp = Library
-draw_set_alpha(.5)
-draw_set_colour(#52C415)
-draw_set_font(font)
+global.hasSpecial = false
 global.buildingdesc = "O'Shaughnessy-Frey Library Center (OSF) is the main library at St Thomas.\n Click space to see common items" 

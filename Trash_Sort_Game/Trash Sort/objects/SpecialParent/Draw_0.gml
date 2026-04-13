@@ -9,7 +9,7 @@ if (room == WrongSortReason) {
 
             viewing = true;
 
-            rect = instance_create_layer(0, 0, "blackbox", drawrectangle);
+            rect = instance_create_layer(0, 0, "blackbox", whyIncorrect);
             rect.target = id;
 
             current = instance_create_layer(200, room_height/2, "showObj", object_index);

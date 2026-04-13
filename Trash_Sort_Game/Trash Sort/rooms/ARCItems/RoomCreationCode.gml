@@ -11,9 +11,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //7
-global.dropthese = [banana,can,gum,candywrapper,chip,teabag]
+global.hasSpecial = false
+global.dropthese = [candywrapper,gum,chip,can,glass,writepaper,apple,teabag,tissue]
 global.tp = ARC
-draw_set_alpha(.5)
-draw_set_colour(#52C415)
-draw_set_font(font)
 global.buildingdesc = "Anderson Athletic and Recreation Complex (ARC) is where to go to work out or play/see a sports game\n Click space to see common items" 
