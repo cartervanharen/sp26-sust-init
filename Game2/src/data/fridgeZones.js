@@ -6,30 +6,41 @@
  * label: UI / debug name
  * rect: { x, y, w, h } in game pixels (top-left origin)
  */
+
 export const FRIDGE_ZONES = [
   {
-    zoneId: "upper_shelf",
-    label: "Upper shelf (ready-to-eat)",
-    rect: { x: 120, y: 80, w: 400, h: 100 },
+    zoneId: "top_shelf",
+    label: "Top Shelf (Ready-to-eat)",
+    rect: { x: 120, y: 60, w: 400, h: 80 },
   },
   {
-    zoneId: "lower_shelf",
-    label: "Lower shelf (raw / defrosting)",
-    rect: { x: 120, y: 200, w: 400, h: 100 },
+    zoneId: "middle_shelf",
+    label: "Middle Shelf (Dairy)",
+    rect: { x: 120, y: 150, w: 400, h: 80 },
+  },
+  {
+    zoneId: "bottom_shelf",
+    label: "Bottom Shelf (Raw Meat)",
+    rect: { x: 120, y: 240, w: 400, h: 80 },
   },
   {
     zoneId: "crisper",
-    label: "Crisper (produce)",
-    rect: { x: 120, y: 320, w: 280, h: 120 },
+    label: "Crisper Drawer",
+    rect: { x: 120, y: 330, w: 280, h: 100 },
   },
   {
     zoneId: "door",
-    label: "Door (condiments / stable items)",
-    rect: { x: 540, y: 80, w: 120, h: 360 },
+    label: "Fridge Door",
+    rect: { x: 540, y: 60, w: 120, h: 370 },
   },
   {
     zoneId: "freezer",
     label: "Freezer",
-    rect: { x: 120, y: 460, w: 540, h: 100 },
+    rect: { x: 120, y: 440, w: 540, h: 100 },
   },
+  {
+    zoneId: "outside",
+    label: "Pantry / Outside",
+    rect: { x: 10, y: 60, w: 100, h: 480 },
+  }
 ];

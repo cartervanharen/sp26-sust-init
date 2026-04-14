@@ -12,56 +12,99 @@ export class FridgeSortScene extends Phaser.Scene {
   }
 
   create() {
-    this.add
-      .text(
-        this.scale.width / 2,
-        28,
-        "Fridge sort (skeleton)",
-        {
-          fontFamily: "system-ui, sans-serif",
-          fontSize: "20px",
-          color: "#ecf0f1",
-        }
-      )
-      .setOrigin(0.5);
+    this.add.text(this.scale.width / 2, 28, "Fridge Sort (Drag & Drop)", {
+      fontFamily: "system-ui, sans-serif",
+      fontSize: "20px",
+      color: "#ecf0f1",
+    }).setOrigin(0.5);
 
-    this.zoneGraphics = this.add.graphics();
-    this.drawZoneOutlines();
+    
+    this.createAllZones();
 
-    // TODO: replace with sprites + drag handlers + drop validation vs zoneId
-    this.spawnPlaceholderItems();
+    this.spawnDraggableItems();
 
-    this.input.once("pointerdown", () => {
-      // Reserved: start round / tutorial overlay
-    });
+    this.setupDragEvents();
   }
 
-  drawZoneOutlines() {
-    this.zoneGraphics.clear();
-    this.zoneGraphics.lineStyle(2, 0x7f8c8d, 0.9);
+  createAllZones() {
     FRIDGE_ZONES.forEach((z) => {
-      const { x, y, w, h } = z.rect;
-      this.zoneGraphics.strokeRect(x, y, w, h);
+        const { x, y, w, h } = z.rect;
+        const zone = this.add.zone(x + w / 2, y + h / 2, w, h).setRectangleDropZone(w, h);
+        zone.setData("zoneId", z.zoneId);
+
+        // Visual outline
+        const graphics = this.add.graphics();
+        graphics.lineStyle(2, 0x7f8c8d, 0.5);
+        graphics.strokeRect(x, y, w, h);
+        
+        // Mini label for the zone
+        this.add.text(x + 5, y + 5, z.label, { fontSize: "10px", color: "#7f8c8d" });
+    });
+}
+
+  spawnDraggableItems() {
+    ITEMS_CATALOG.forEach((item, i) => {
+      const startX = 60;
+      const startY = 130 + i * 60;
+
+      //visual container for the food item 
+      const container = this.add.container(startX, startY);
+      const bg = this.add.graphics();
+      bg.fillStyle(0x3498db, 1);
+      bg.fillRoundedRect(-40, -20, 80, 40, 6);
+      
+      const label = this.add.text(0, 0, item.label, {
+        fontSize: "14px",
+        color: "#ffffff"
+      }).setOrigin(0.5);
+
+      container.add([bg, label]);
+      container.setSize(80, 40);
+      container.setInteractive({ draggable: true });
+      
+      // Attach metadata for validation [cite: 18, 38]
+      container.setData("itemData", item);
+      container.setData("originX", startX);
+      container.setData("originY", startY);
     });
   }
 
-  spawnPlaceholderItems() {
-    const startY = 100;
-    const boxX = 24;
-    const boxW = 72;
-    const boxH = 40;
-    ITEMS_CATALOG.forEach((item, i) => {
-      const y = startY + i * 56;
-      const g = this.add.graphics();
-      g.fillStyle(0xe74c3c + i * 0x111111, 1);
-      g.fillRoundedRect(boxX, y, boxW, boxH, 6);
-      this.add
-        .text(boxX + boxW / 2, y + boxH / 2, item.label, {
-          fontFamily: "system-ui, sans-serif",
-          fontSize: "11px",
-          color: "#ffffff",
-        })
-        .setOrigin(0.5);
+  setupDragEvents() {
+    this.input.on('dragstart', (pointer, gameObject) => {
+      this.children.bringToTop(gameObject);
+      gameObject.setScale(1.1); // gets bigger when picked up
     });
+
+    this.input.on('drag', (pointer, gameObject, dragX, dragY) => {
+      gameObject.x = dragX;
+      gameObject.y = dragY;
+    });
+
+    this.input.on('drop', (pointer, gameObject, dropZone) => {
+        const itemData = gameObject.getData("itemData");
+        const targetZoneId = dropZone.getData("zoneId");
+
+        // Snap if it is the correct zone
+        if (itemData.correctZoneId === targetZoneId) {
+            gameObject.x = dropZone.x;
+            gameObject.y = dropZone.y;
+            console.log(`Correct! ${itemData.label} belongs in the ${targetZoneId}.`);
+        } else {
+            // Otherwise return to start
+            this.returnToOrigin(gameObject);
+        }
+    });
+
+    this.input.on('dragend', (pointer, gameObject, dropped) => {
+      gameObject.setScale(1.0);
+      if (!dropped) {
+        this.returnToOrigin(gameObject);
+      }
+    });
+  }
+
+  returnToOrigin(gameObject) {
+    gameObject.x = gameObject.getData("originX");
+    gameObject.y = gameObject.getData("originY");
   }
 }
