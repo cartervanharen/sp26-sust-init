@@ -12,7 +12,7 @@ export class FridgeSortScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(this.scale.width / 2, 28, "Fridge Sort (Drag & Drop)", {
+    this.add.text(this.scale.width / 2, 28, "Fridge Sort", {
       fontFamily: "system-ui, sans-serif",
       fontSize: "20px",
       color: "#ecf0f1",
