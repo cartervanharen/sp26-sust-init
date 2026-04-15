@@ -32,12 +32,12 @@ export class FridgeSortScene extends Phaser.Scene {
         const zone = this.add.zone(x + w / 2, y + h / 2, w, h).setRectangleDropZone(w, h);
         zone.setData("zoneId", z.zoneId);
 
-        // Visual outline
+        // outlines for zones
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x7f8c8d, 0.5);
         graphics.strokeRect(x, y, w, h);
         
-        // Mini label for the zone
+        // zone labels
         this.add.text(x + 5, y + 5, z.label, { fontSize: "10px", color: "#7f8c8d" });
     });
 }
@@ -62,7 +62,7 @@ export class FridgeSortScene extends Phaser.Scene {
       container.setSize(80, 40);
       container.setInteractive({ draggable: true });
       
-      // Attach metadata for validation [cite: 18, 38]
+      // attach metadata for validation 
       container.setData("itemData", item);
       container.setData("originX", startX);
       container.setData("originY", startY);
@@ -90,7 +90,7 @@ export class FridgeSortScene extends Phaser.Scene {
             gameObject.y = dropZone.y;
             console.log(`Correct! ${itemData.label} belongs in the ${targetZoneId}.`);
         } else {
-            // Otherwise return to start
+            
             this.returnToOrigin(gameObject);
         }
     });
