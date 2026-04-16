@@ -24,6 +24,39 @@ export class FridgeSortScene extends Phaser.Scene {
     this.spawnDraggableItems();
 
     this.setupDragEvents();
+
+    this.inGameMenu();
+
+    //score
+    this.score = 0;
+    this.totalItems = ITEMS_CATALOG.length;
+
+    this.scoreText = this.add.text(20, 20, `Items Sorted: ${this.score} / ${this.totalItems}`, {
+        fontFamily: "system-ui, sans-serif",
+        fontSize: "24px",
+        color: "#2ecc71", 
+        fontWeight: "bold"
+    });
+
+
+
+
+    //timer
+    this.timeLeft = 60;
+
+    this.timerText = this.add.text(this.scale.width - 20, 20, `Time: ${this.timeLeft}`, {
+      fontFamily: "system-ui, sans-serif",
+      fontSize: "24px",
+      color: "#f4efee", 
+      fontWeight: "bold"
+    }).setOrigin(1, -22);
+
+    this.time.addEvent({
+      delay: 1000,
+      callback: this.updateTimer,
+      callbackScope: this,
+      loop: true
+    });
   }
 
   createAllZones() {
@@ -81,19 +114,28 @@ export class FridgeSortScene extends Phaser.Scene {
     });
 
     this.input.on('drop', (pointer, gameObject, dropZone) => {
-        const itemData = gameObject.getData("itemData");
-        const targetZoneId = dropZone.getData("zoneId");
+      const itemData = gameObject.getData("itemData");
+      const targetZoneId = dropZone.getData("zoneId");
 
-        // Snap if it is the correct zone
-        if (itemData.correctZoneId === targetZoneId) {
-            gameObject.x = dropZone.x;
-            gameObject.y = dropZone.y;
-            console.log(`Correct! ${itemData.label} belongs in the ${targetZoneId}.`);
-        } else {
-            
-            this.returnToOrigin(gameObject);
-        }
-    });
+      if (itemData.correctZoneId === targetZoneId) {
+          gameObject.x = dropZone.x;
+          gameObject.y = dropZone.y;
+          
+          // Prevent re-scoring the same item if it's already "locked" (optional)
+          if (!gameObject.getData("isSorted")) {
+              this.score++;
+              gameObject.setData("isSorted", true);
+              this.scoreText.setText(`Items Sorted: ${this.score} / ${this.totalItems}`);
+          }
+
+          // Success Check: Is the fridge fully sorted? [cite: 3, 9]
+          if (this.score === this.totalItems) {
+              this.handleWin();
+          }
+      } else {
+          this.returnToOrigin(gameObject);
+      }
+  });
 
     this.input.on('dragend', (pointer, gameObject, dropped) => {
       gameObject.setScale(1.0);
@@ -102,6 +144,77 @@ export class FridgeSortScene extends Phaser.Scene {
       }
     });
   }
+
+  inGameMenu() {
+    
+    const menuBtn = this.add.text(this.scale.width - 150, 20, "MENU", {
+        fontFamily: "-apple-system, sans-serif",
+        fontSize: "18px",
+        backgroundColor: "#34495e",
+        padding: { x: 10, y: 5 },
+        color: "#ffffff"
+    }).setInteractive({ useHandCursor: true });
+
+    //popup
+    this.menuPanel = this.add.container(this.scale.width / 2, this.scale.height / 2).setVisible(false).setDepth(100);
+
+    const bg = this.add.graphics();
+    bg.fillStyle(0x2c3e50, 0.95);
+    bg.fillRoundedRect(-100, -80, 200, 160, 10);
+    bg.lineStyle(2, 0x7f8c8d);
+    bg.strokeRoundedRect(-100, -80, 200, 160, 10);
+
+    // restart button
+    const restartBtn = this.add.text(0, -30, "Restart Level", {
+        fontFamily: "-apple-system, sans-serif",
+        fontSize: "18px",
+        backgroundColor: "#27ae60",
+        padding: { x: 20, y: 10 },
+        fixedWidth: 160,
+        align: 'center'
+    }).setOrigin(0.5).setInteractive({ useHandCursor: true });
+
+    // mainmenu button
+    const exitBtn = this.add.text(0, 40, "Main Menu", {
+        fontFamily: "-apple-system, sans-serif",
+        fontSize: "18px",
+        backgroundColor: "#e74c3c",
+        padding: { x: 20, y: 10 },
+        fixedWidth: 160,
+        align: 'center'
+    }).setOrigin(0.5).setInteractive({ useHandCursor: true });
+
+    this.menuPanel.add([bg, restartBtn, exitBtn]);
+
+    //button logic
+    menuBtn.on('pointerdown', () => {
+        this.menuPanel.setVisible(!this.menuPanel.visible);
+    });
+
+    restartBtn.on('pointerdown', () => {
+        this.scene.restart(); 
+    });
+
+    exitBtn.on('pointerdown', () => {
+        window.location.href = 'index.html';
+    });
+}
+
+  updateTimer() {
+    this.timeLeft--;
+
+    // Update the display
+    this.timerText.setText(`Time: ${this.timeLeft}`);
+    if (this.timeLeft <= 0) {
+        window.location.href = 'gameover.html';
+    }
+}
+
+handleWin() {
+    this.time.delayedCall(500, () => {
+        window.location.href = 'nextLevel.html'; 
+    });
+}
 
   returnToOrigin(gameObject) {
     gameObject.x = gameObject.getData("originX");
