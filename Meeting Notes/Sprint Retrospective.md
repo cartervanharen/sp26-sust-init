@@ -18,3 +18,5 @@ Template from https://www.atlassian.com/blog/jira/5-fun-sprint-retrospective-ide
  - Communicating to Rachel to see if any criteria is updated/any assistance from her is needed
  - Daily communication between eachother
 
+
+
