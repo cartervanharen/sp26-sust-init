@@ -1,4 +1,4 @@
-global.arrayNum = 5
+global.arrayNum = 4
 global.tutorial = false
 global.gamedone = false
 if(global.fullness[global.arrayNum ] == 0){
@@ -12,7 +12,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //8 gum,candywrapper,chip,bottles,printpaper,apple,compcup
-global.dropthese = [gum,candywrapper,chip,can,glass,writepaper,apple,compcup,tissue]
+global.dropthese = [gum,pencil,Pen,can,glass,paper,apple,teabag,tissue]
 global.buildingdesc = "O'Shaughnessy Educational Center (OEC) the place for communications, media, economics and foreign languages classes .\n Click space to see what items to expect" 
 global.tp = OEC
 global.hasSpecial = false

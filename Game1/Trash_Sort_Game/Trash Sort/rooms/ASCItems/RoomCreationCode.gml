@@ -12,6 +12,6 @@ if(global.fullness[global.arrayNum ] == 0){
 
 //3
 global.hasSpecial = false
-global.dropthese = [ketchup, waxpaper, utensils, paper,can, bottles, burger, napkin, chicken]
+global.dropthese = [gum, chip, Pen, glass, tincan, paper, burger, compcup, napkin]
 global.tp = ASC
 global.buildingdesc = "Anderson Student Center (ASC) is the place to go to get some food or chill out. \n Click space to see common items" 

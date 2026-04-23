@@ -28,8 +28,8 @@ for (var i = 0; i < array_length(global.badSort); i++) {
 	
 	//draw object scaled down
     current = instance_create_layer(x_pos, y_pos, "mistakes", obj);
-	current.image_xscale = .4
-	current.image_yscale = .4
+	current.image_xscale = .5
+	current.image_yscale = .5
 	
 }
 

@@ -11,7 +11,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //5
-global.dropthese = [gum, chip, cardboard, paper, orange, tissue, plasticbag, battery]
+global.dropthese = [ketchup, takeout, cardboard, milkcarton, teabag, tissue, plasticbag, battery]
 global.tp = MHC
 draw_set_alpha(.5)
 draw_set_colour(#52C415)

@@ -18,8 +18,6 @@ if(!global.fade){
 		randnum = irandom(array_length(global.dropthese)-1)
 		global.dropping = true
 		global.item = instance_create_layer(locX, 200, "gamehigh", global.dropthese[randnum])
-		global.item.image_xscale = .5
-		global.item.image_yscale = .5
 		
 	}else{
 		//if true quick drop based on current location

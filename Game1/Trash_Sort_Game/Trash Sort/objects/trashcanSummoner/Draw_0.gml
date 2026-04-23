@@ -23,18 +23,13 @@ if(instance_number(tcParent) <7){
 	curr.image_xscale =2
 	curr.image_yscale =2
 	
-	//ARC
-	curr = instance_create_layer(518,343,"trashcans",trashcanArr[global.fullness[4]])
-	curr.image_xscale =2
-	curr.image_yscale =2
-	
 	//OEC
-	curr = instance_create_layer(1110,374,"trashcans",trashcanArr[global.fullness[5]])
+	curr = instance_create_layer(1110,374,"trashcans",trashcanArr[global.fullness[4]])
 	curr.image_xscale =2
 	curr.image_yscale =2
 	
 	//Library
-	curr = instance_create_layer(1110,681,"trashcans",trashcanArr[global.fullness[6]])
+	curr = instance_create_layer(1110,681,"trashcans",trashcanArr[global.fullness[5]])
 	curr.image_xscale =2
 	curr.image_yscale =2
 	

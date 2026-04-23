@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"o12s",
-    "path":"sprites/o12s/o12s.yy",
+    "name":"o5",
+    "path":"sprites/o5/o5.yy",
   },
   "spriteMaskId":null,
   "visible":true,

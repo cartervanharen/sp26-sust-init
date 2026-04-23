@@ -66,35 +66,35 @@ if(current = 1){
 	//trash
 
 	drawing = instance_create_layer(column_1,row_1 ,"gamehigh", global.dropthese[0])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	drawing = instance_create_layer(column_1,row_2 ,"gamehigh", global.dropthese[1])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	drawing = instance_create_layer(column_1,row_3, "gamehigh", global.dropthese[2])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	//recycle
 	drawing = instance_create_layer(column_2 , row_1, "gamehigh", global.dropthese[3])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	drawing = instance_create_layer(column_2 ,row_2, "gamehigh", global.dropthese[4])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	drawing = instance_create_layer(column_2 ,row_3, "gamehigh", global.dropthese[5])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 
 	//org
 	drawing = instance_create_layer(column_3, row_1, "gamehigh", global.dropthese[6])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	drawing = instance_create_layer(column_3 ,row_2, "gamehigh", global.dropthese[7])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	drawing = instance_create_layer(column_3 ,row_3, "gamehigh", global.dropthese[8])
-	drawing.image_xscale = .4
-	drawing.image_yscale = .4
+	drawing.image_xscale = .75
+	drawing.image_yscale = .75
 	
 //if it has special items, draw it based on this spacing
 }else if (current = 2 and global.hasSpecial){
@@ -109,8 +109,8 @@ if(current = 1){
 			draw_set_alpha(1)
 			var txt = "Some items have special ways to be recycled. Bring certain times to the campus store in Murray-Herrick Center to recycle\n (CLICK SPACE TO CONTINUE)";
 			bin = instance_create_layer(640,960,"gamehigh",sBin)
-			bin.image_xscale = .5
-			bin.image_yscale = .5
+			bin.image_xscale = .75
+			bin.image_yscale = .75
 
 			// main text (white)
 			draw_set_color(c_white);
@@ -129,37 +129,37 @@ if(current = 1){
 
 			//trash
 			drawing = instance_create_layer(column_1 ,row_1, "gamehigh", global.dropthese[0])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 			drawing =instance_create_layer(column_1 , row_2,"gamehigh", global.dropthese[1])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 
 			//recycle
 			drawing =instance_create_layer(column_2 ,row_1, "gamehigh", global.dropthese[2])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 			drawing =instance_create_layer(column_2 , row_2,"gamehigh", global.dropthese[3])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 
 
 			//org
 			drawing =instance_create_layer(column_3 ,row_1, "gamehigh", global.dropthese[4])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 			drawing =instance_create_layer(column_3 ,row_2, "gamehigh", global.dropthese[5])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 
 			//special recycle
 
 			drawing =instance_create_layer(column_3+320 , row_1,"gamehigh", global.dropthese[6])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 			drawing =instance_create_layer(column_3+320,row_2, "gamehigh", global.dropthese[7])
-			drawing.image_xscale = .5
-			drawing.image_yscale = .5
+			drawing.image_xscale = .75
+			drawing.image_yscale = .75
 		}
 
 //fall back to draw semi visible black box

@@ -1,4 +1,4 @@
-global.arrayNum = 5
+global.arrayNum = 4
 global.gamedone = false
 instance_create_layer(0,0,"gamehigh",gameControl)
 if(global.fullness[global.arrayNum ] == 0){
@@ -12,5 +12,5 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 global.hasSpecial = false
 //8 gum,candywrapper,chip,bottles,printpaper,apple,compcup
-global.dropthese = [gum,candywrapper,chip,can,glass,writepaper,apple,compcup,tissue]
+global.dropthese = [gum,pencil,Pen,can,glass,paper,apple,teabag,tissue]
 global.buildingdesc = "O'Shaughnessy Educational Center (OEC) the place for communications, media, economics and foreign languages classes .\n Click space to see what items to expect" 

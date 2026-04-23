@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"os9",
-    "path":"sprites/os9/os9.yy",
+    "name":"o7",
+    "path":"sprites/o7/o7.yy",
   },
   "spriteMaskId":null,
   "visible":true,

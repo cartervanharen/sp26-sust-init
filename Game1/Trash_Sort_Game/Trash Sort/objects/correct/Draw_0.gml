@@ -8,5 +8,5 @@ if(temp_alpha > 0){
 //destroy trigger
 }else{
 	instance_destroy()
-	
 }
+

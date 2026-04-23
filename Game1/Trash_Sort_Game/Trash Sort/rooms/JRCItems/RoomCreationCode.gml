@@ -11,7 +11,7 @@ if(global.fullness[global.arrayNum ] == 0){
 }
 
 //6
-global.dropthese = [gum, candywrapper, chip, printpaper, can, glass, banana, orange, tissue]
+global.dropthese = [pencil, utensils, chip, paper, tincan, glass, banana, teabag, tissue]
 global.tp = JRC
 global.hasSpecial = false
 global.buildingdesc = "John Roach Center (JRC) is the place for libral arts related classes .\n Click space to see common items" 

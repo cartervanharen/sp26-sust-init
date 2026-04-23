@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"bananas",
-    "path":"sprites/bananas/bananas.yy",
+    "name":"o9",
+    "path":"sprites/o9/o9.yy",
   },
   "spriteMaskId":null,
   "visible":true,

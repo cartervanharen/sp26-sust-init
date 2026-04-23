@@ -14,5 +14,5 @@ if(global.fullness[global.arrayNum ] == 0){
 //5
 
 global.hasSpecial = true
-global.dropthese = [waxpaper, takeout, cardboard, milkcarton, scraps, tissue, plasticbag, battery]
+global.dropthese = [ketchup, takeout, cardboard, milkcarton, teabag, tissue, plasticbag, battery]
 global.buildingdesc = "Murphy-Herrick Center contain the campus store, classes, and a residence hall up top. Next to the campus store is the special recycling bin! the\n Click space to see common items " 

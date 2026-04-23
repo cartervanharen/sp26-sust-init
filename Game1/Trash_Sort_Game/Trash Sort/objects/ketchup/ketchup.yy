@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"t5s",
-    "path":"sprites/t5s/t5s.yy",
+    "name":"t3",
+    "path":"sprites/t3/t3.yy",
   },
   "spriteMaskId":null,
   "visible":true,
