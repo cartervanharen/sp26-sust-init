@@ -47,5 +47,7 @@ global.hasSpecial = false
 
 global.specRecinfo = true
 
+global.pause = false
+
 randomise()
 

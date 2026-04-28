@@ -24,7 +24,8 @@ draw_set_valign(fa_top);
 	// main text (white)
 	draw_set_color(c_white);
 	draw_text_ext(room_width/2, room_height/4, txt,100,1000);
-	show = instance_create_layer(640,640,"temp",napkin)
+	show = instance_create_layer(640,600,"temp",napkin)
+	
 	
 	
 }else if (current = 3){
@@ -52,7 +53,34 @@ draw_text_ext(room_width/2, room_height/4, txt,100,1000);
 }else if (current = 4){
 	if(instance_exists(napkin)){
 		instance_destroy(napkin)
-		reset1 +=1
+	}
+	if(!instance_exists(show)){
+		show = instance_create_layer(1000,200,"temp",cardboard)
+	}
+	
+	if(show.y > 900){
+		show.y = 100
+	}
+	if(held_s){
+		show.y += 5
+	}else{
+		show.y += 1
+	}
+	
+	
+	draw_set_alpha(1)
+	var txt = "Hold 'S' to drop an item faster";
+// main text (white)
+	draw_set_color(c_white);
+
+	draw_text_ext(room_width/3, room_height/2, txt,100,400);
+	
+	
+	
+}else if (current = 5){
+
+	if(instance_exists(cardboard)){
+		instance_destroy(cardboard)
 	}
 		draw_set_alpha(1)
 	var txt = "The redder the trash can, the fast the items will drop\n (CLICK SPACE TO CONTINUE)";
@@ -63,7 +91,7 @@ draw_text_ext(room_width/2, room_height/4, txt,100,1000);
 	draw_text_ext(room_width/2, room_height/3, txt,100,1000);
 	
 	
-}else if (current = 5){
+}else if (current = 6){
 		draw_set_alpha(1)
 	var txt = "Please click the trashcan above O'Shaughnessy Educational Center AKA OEC!\n (CLICK SPACE TO CONTINUE)";
 // main text (white)
