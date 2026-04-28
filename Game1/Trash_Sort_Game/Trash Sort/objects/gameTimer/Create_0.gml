@@ -1,5 +1,6 @@
-timer = 15
-//60 is equal to 1 second
-alarm[0] = 60
+timer = 20;   
+alarm[0] = 60; 
 
-buidling = irandom_range(0,8)
+//if game should be paused
+saved_alarm = -1;
+was_paused = false;

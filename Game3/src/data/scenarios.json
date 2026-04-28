@@ -1,0 +1,299 @@
+{
+  "startScenario": "morning",
+  "scenarios": [
+    {
+      "id": "morning",
+      "title": "MORRISON HALL — 7:45 AM",
+      "prompt": "Your alarm blares at 7:45 AM. Pale morning light filters through your dorm window in Morrison Hall. Your 8:00 AM Environmental Studies class starts in fifteen minutes. The campus quad is a ten-minute walk away, but your car is parked in the lot just outside. What do you do?",
+      "choices": [
+        {
+          "id": "walk",
+          "text": "Walk to class across campus",
+          "points": 3,
+          "feedback": "You lace up your shoes and head out on foot. The crisp Minnesota morning air wakes you up better than any coffee. Zero emissions — and you spot a robin on the quad. The average American drives 13,500 miles per year; every walk chips away at that number.",
+          "next": "power_choice"
+        },
+        {
+          "id": "shuttle",
+          "text": "Catch the campus shuttle at the stop nearby",
+          "points": 2,
+          "feedback": "You jog to the shuttle stop and hop on just in time. Shared transit means a fraction of the per-person emissions of driving solo. One full shuttle replaces about 15 individual car trips.",
+          "next": "power_choice"
+        },
+        {
+          "id": "drive",
+          "text": "Drive your car to class",
+          "points": 0,
+          "feedback": "You grab your keys and head to the lot. It's a short drive, but every trip adds up — the average car emits about 404 grams of CO₂ per mile. Even a one-mile campus drive puts nearly a pound of carbon into the air.",
+          "next": "parking"
+        },
+        {
+          "id": "snooze",
+          "text": "Hit snooze and sleep in",
+          "points": -1,
+          "feedback": "You roll over and drift back to sleep. Missing class means missing today's sustainability lecture — and you'll probably end up driving later to make up for lost time. The guilt alone might keep you up tonight.",
+          "next": "power_choice"
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "title": "CRETIN-DERHAM LOT — 8:05 AM",
+      "prompt": "You pull into the Cretin-Derham parking lot. Every single spot is taken. Cars circle like sharks, engines rumbling, exhaust clouding the cold morning air. A line of brake lights stretches around the corner. You're already late.",
+      "choices": [
+        {
+          "id": "park_far",
+          "text": "Park at the south lot and walk the extra distance",
+          "points": 2,
+          "feedback": "You head to the open south lot and walk the extra five minutes. No wasted fuel idling, and you got some bonus steps in. The south lot is quieter anyway — sometimes the sustainable choice is also the peaceful one.",
+          "next": "power_choice"
+        },
+        {
+          "id": "idle",
+          "text": "Idle your engine and circle for a close spot",
+          "points": -2,
+          "feedback": "You circle the lot for ten minutes with the engine running. Idling burns roughly half a gallon of fuel per hour and pumps CO₂ into the air for zero miles traveled. You're still late to class anyway.",
+          "next": "power_choice"
+        },
+        {
+          "id": "illegal",
+          "text": "Park behind the dumpsters — nobody will notice",
+          "points": 0,
+          "feedback": "You squeeze your car in behind the dumpsters. Quick, convenient, and definitely not legal. You sprint to class with a nagging feeling in your gut. This might come back to haunt you.",
+          "next": "security"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "CRETIN LOT — 9:30 AM",
+      "prompt": "Class ends and you walk back to your car. A bright orange Public Safety warning ticket is tucked under your windshield wiper: 'VEHICLE PARKED IN VIOLATION — SUBJECT TO TOW.' A campus security officer is still nearby, writing up another car.",
+      "choices": [
+        {
+          "id": "move_car",
+          "text": "Move your car to a legal spot right away",
+          "points": 1,
+          "feedback": "You move your car immediately. It takes a few extra minutes, but you dodge a tow fee and keep the lot accessible for service vehicles. Taking responsibility has its own kind of efficiency.",
+          "next": "power_choice"
+        },
+        {
+          "id": "ignore",
+          "text": "Stuff the ticket in your pocket and walk away",
+          "points": -1,
+          "feedback": "You crumple the ticket and head off. If your car gets towed, that's a diesel tow truck dispatched just for you — burning about a gallon of fuel for every few miles. Not exactly the move.",
+          "next": "power_choice"
+        }
+      ]
+    },
+    {
+      "id": "power_choice",
+      "title": "CAMPUS WALKWAY — 10:00 AM",
+      "prompt": "As you're walking between classes, a nagging thought hits you — you left your dorm in a rush this morning. Something is still running back in your room right now, wasting energy. What did you forget?",
+      "choices": [
+        {
+          "id": "light",
+          "text": "You left your bedroom light on — go back and switch it off",
+          "points": 2,
+          "feedback": "Good catch. A single 60-watt bulb left on for 8 hours wastes nearly half a kilowatt-hour. Multiply that by every dorm room on campus — there are over 2,000 — and you start to see the scale of the problem.",
+          "next": "heating"
+        },
+        {
+          "id": "water",
+          "text": "You left the sink dripping — go back and tighten the faucet",
+          "points": 3,
+          "feedback": "A dripping faucet can waste over 3,000 gallons of water per year — enough to fill a small swimming pool. You jog back and crank it shut. Minnesota's freshwater is precious, even when it feels abundant.",
+          "next": "heating"
+        },
+        {
+          "id": "charger",
+          "text": "Your phone charger is plugged in — it can wait",
+          "points": 1,
+          "feedback": "Phantom loads from idle chargers are small — about 0.26 watts each — but across millions of devices nationwide, 'vampire energy' accounts for 5–10% of residential electricity use. Small things scale.",
+          "next": "heating"
+        }
+      ]
+    },
+    {
+      "id": "heating",
+      "title": "MORRISON HALL DORM — 10:20 AM",
+      "prompt": "Back in your room, it's chilly. The old radiator barely keeps up with the Minnesota wind seeping through the single-pane windows. The thermostat dial is right there on the wall, and you've got a hoodie draped over your chair.",
+      "choices": [
+        {
+          "id": "crank_heat",
+          "text": "Crank the heat up to 78°F so it's toasty when you return",
+          "points": -2,
+          "feedback": "Feels great now, but you're heating an empty room for hours. Every degree above 68°F increases heating energy use by about 3%. At 78°F, you're burning roughly 30% more energy than necessary — and your roommate will be sweating.",
+          "next": "dining"
+        },
+        {
+          "id": "sweater",
+          "text": "Put on your hoodie and leave the thermostat at 68°F",
+          "points": 3,
+          "feedback": "Layer up! Keeping the thermostat at 68°F or below is one of the simplest ways to cut energy use. Your hoodie is basically free insulation — zero electricity, infinite coziness.",
+          "next": "dining"
+        },
+        {
+          "id": "open_window",
+          "text": "Crack the window open to let in some fresh air",
+          "points": -1,
+          "feedback": "Fresh air feels nice, but with the heat running, you're literally paying to warm the outdoors. In Minnesota. In April. The radiator kicks into overdrive trying to compensate, burning energy for nothing.",
+          "next": "dining"
+        }
+      ]
+    },
+    {
+      "id": "dining",
+      "title": "UPPER QUAD — 12:15 PM",
+      "prompt": "Your stomach growls. It's 12:15 and the lunch rush is on. From the upper quad you can see Anderson Dining Hall bustling with students, the Scooter's sign glowing inside the Student Center, and a line forming at the food trucks near the Law School. You also packed a lunch this morning... if you remembered to grab it.",
+      "choices": [
+        {
+          "id": "anderson",
+          "text": "Head to Anderson Dining Hall",
+          "points": 1,
+          "feedback": "Tray-based dining means way less disposable packaging than grab-and-go, and Anderson composts food scraps on-site. It's not zero-waste, but institutional dining done right beats a pile of to-go containers.",
+          "next": "waste_challenge"
+        },
+        {
+          "id": "scooters",
+          "text": "Grab a coffee and pastry at Scooter's",
+          "points": 0,
+          "feedback": "Quick and easy, but that paper cup, plastic lid, cardboard sleeve, and pastry bag will all hit the trash. Bringing a reusable mug could have eliminated three of those four items. Next time.",
+          "next": "waste_challenge"
+        },
+        {
+          "id": "packed",
+          "text": "Eat the lunch you packed in a reusable container",
+          "points": 3,
+          "feedback": "Homemade meal, zero waste packaging. You find a bench on the quad and eat in the sunshine. This is the gold standard — you control the ingredients, the portions, and the waste. Well played.",
+          "next": "waste_challenge"
+        },
+        {
+          "id": "food_truck",
+          "text": "Hit up the food trucks near the Law School",
+          "points": -1,
+          "feedback": "The food trucks have amazing options, but everything comes in styrofoam containers, with plastic utensils and a fistful of individually-wrapped condiment packets. The taste is great — the waste, not so much.",
+          "next": "food_truck_scene"
+        }
+      ]
+    },
+    {
+      "id": "food_truck_scene",
+      "title": "FOOD TRUCKS — SCHOOL OF LAW — 12:30 PM",
+      "prompt": "You ordered from 'Sizzle & Greens,' a popular truck parked near the Law School. The cook hands you your meal in a styrofoam container inside a plastic bag, with a fistful of napkins, three sauce packets you didn't ask for, and a plastic fork still in its wrapper.",
+      "choices": [
+        {
+          "id": "refuse_extras",
+          "text": "\"No bag, thanks — and I've got my own fork\"",
+          "points": 3,
+          "feedback": "A simple 'no thanks' keeps unnecessary waste out of the landfill. The cook doesn't even blink — it's less stuff for them to hand out. Americans throw away 40 billion plastic utensils every year. You just opted out.",
+          "next": "waste_challenge"
+        },
+        {
+          "id": "take_extras",
+          "text": "Take extra utensils and sauce packets just in case",
+          "points": -2,
+          "feedback": "You stuff the extras in your backpack where they'll join the graveyard of forgotten plastic forks. Most 'just in case' utensils become 'just in trash.' Single-use plastics take up to 500 years to decompose.",
+          "next": "waste_challenge"
+        },
+        {
+          "id": "sort_waste",
+          "text": "Take the meal, then find the campus sorting bins after eating",
+          "points": 2,
+          "feedback": "After eating, you find the tri-sort station near the Law School entrance and carefully separate recyclables, compost, and landfill waste. It takes 30 extra seconds and keeps materials out of the wrong stream.",
+          "next": "waste_challenge"
+        }
+      ]
+    },
+    {
+      "id": "waste_challenge",
+      "title": "THE QUAD — 1:00 PM",
+      "prompt": "On your way back from lunch, you spot a booth on the quad with a bright banner: 'KNOW YOUR WASTE CHALLENGE — WIN A PRIZE!' A cheerful student volunteer hands you three items: a plastic bottle cap, a greasy pizza box, and a paper coffee cup with a plastic lining. 'Sort them into the right bins!' she says with a grin.",
+      "choices": [
+        {
+          "id": "correct_sort",
+          "text": "Cap → Recycling, Pizza box → Compost, Cup → Landfill",
+          "points": 3,
+          "feedback": "Nailed it! Plastic caps ARE recyclable (but should stay attached to the bottle). Greasy cardboard can be composted but NOT recycled — grease ruins paper recycling batches. And paper cups with plastic lining can't be recycled at most facilities. You win a bamboo utensil set!",
+          "next": "fast_fashion"
+        },
+        {
+          "id": "all_landfill",
+          "text": "When in doubt, toss all three in Landfill",
+          "points": -2,
+          "feedback": "The safe bet — but exactly why 75% of recyclable material in America still ends up in landfills. 'Wish-cycling' (guessing wrong) can contaminate recycling streams, but giving up entirely isn't the answer either. The volunteer hands you a sad pamphlet.",
+          "next": "fast_fashion"
+        },
+        {
+          "id": "learn_more",
+          "text": "Say 'honestly, I'm not sure' and sign up for Eco-Tommies",
+          "points": 1,
+          "feedback": "Honesty is the first step. You sign up for the Eco-Tommies mailing list and instantly get a campus waste-sorting guide on your phone. Knowing what goes where is a skill — and you just decided to learn it.",
+          "next": "fast_fashion"
+        }
+      ]
+    },
+    {
+      "id": "fast_fashion",
+      "title": "O'SHAUGHNESSY-FREY LIBRARY — 2:30 PM",
+      "prompt": "After your afternoon class, you walk through the O'Shaughnessy-Frey Library lobby and spot a pop-up event: 'TOMMIE THRIFT — Sustainable Fashion Week.' A display reads: 'The fashion industry produces 10% of global carbon emissions and is the second-largest consumer of water worldwide. 85% of all textiles end up in landfills.' A table is piled with gently-used clothes donated by students and staff.",
+      "choices": [
+        {
+          "id": "thrift",
+          "text": "Browse the thrift table and pick up something you like",
+          "points": 3,
+          "feedback": "You score a barely-worn flannel for $3. Buying secondhand extends a garment's life and keeps textiles out of landfills. It takes about 700 gallons of water to produce a single new cotton t-shirt — you just saved all of that.",
+          "next": "evening"
+        },
+        {
+          "id": "fast_fashion_buy",
+          "text": "Nah — you'll order something from SHEIN later tonight",
+          "points": -2,
+          "feedback": "Fast fashion is cheap upfront, but the real cost is paid in exploitative labor, microplastic shedding with every wash, and a shirt that falls apart after three wears. The average American throws away 81 pounds of clothing per year.",
+          "next": "evening"
+        },
+        {
+          "id": "no_clothes",
+          "text": "You don't need new clothes right now — keep walking",
+          "points": 2,
+          "feedback": "The most sustainable garment is the one already in your closet. You keep walking, content with what you have. Reducing consumption is always the most powerful move — even more than buying 'green.'",
+          "next": "evening"
+        }
+      ]
+    },
+    {
+      "id": "evening",
+      "title": "MORRISON HALL — 9:00 PM",
+      "prompt": "The sun has set over the St. Thomas campus. You're back in your dorm room after a full day of classes, decisions, and discoveries. As you settle in for the evening, you think about one last thing before bed.",
+      "choices": [
+        {
+          "id": "short_shower",
+          "text": "Take a quick 5-minute shower instead of your usual 15",
+          "points": 3,
+          "feedback": "A standard showerhead uses about 2.5 gallons per minute. Cutting 10 minutes saves 25 gallons of heated water — that's both water conservation AND energy savings from not heating it. Your future self (and the planet) thanks you.",
+          "next": "end"
+        },
+        {
+          "id": "tv_background",
+          "text": "Leave the TV on as background noise while you study",
+          "points": -1,
+          "feedback": "A TV running in the background draws 80–400 watts for hours, and studies show it actually hurts concentration. That's energy wasted twice — once powering the screen, and again in the focus you lost. Silence is sustainable.",
+          "next": "end"
+        },
+        {
+          "id": "research",
+          "text": "Look up St. Thomas sustainability initiatives online",
+          "points": 2,
+          "feedback": "You discover that UST has a Climate Action Plan, campus gardens, and a goal of carbon neutrality. Awareness is the first step to action — and now you know where to plug in if you want to make a bigger impact.",
+          "next": "end"
+        }
+      ]
+    }
+  ],
+  "ratings": [
+    { "minScore": 20, "title": "Sustainability Champion", "description": "You walked the walk today — literally and figuratively. Your choices showed deep awareness of how everyday decisions ripple outward. St. Thomas is greener because of Tommies like you." },
+    { "minScore": 14, "title": "Eco-Conscious Tommie", "description": "You made thoughtful choices throughout your day and showed real awareness of your environmental impact. A few tweaks and you'd be leading the campus sustainability club." },
+    { "minScore": 7, "title": "Getting There", "description": "You made some sustainable choices today, but also missed a few opportunities. The good news? Every day is a new chance to do better. Awareness is the first step." },
+    { "minScore": 0, "title": "Room for Growth", "description": "Today wasn't your greenest day, but recognizing that is half the battle. Small changes — packing lunch, turning off lights, walking instead of driving — add up faster than you think." },
+    { "minScore": -99, "title": "Needs a Wake-Up Call", "description": "Your carbon footprint left some deep tracks today. But here's the thing — you played this game, which means you care enough to learn. That's where change starts." }
+  ]
+}

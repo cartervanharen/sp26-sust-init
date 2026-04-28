@@ -12,7 +12,7 @@ draw_text(640,5, "Correct: " + string(curScore))
 draw_set_halign(fa_right)
 draw_set_valign(fa_top)
 draw_text(1275,5, "Incorrect: " + string(mistakes))
-if(!global.fade){
+if(!global.fade and !global.pause){
 	//draw one of the objects associated
 	if(!global.dropping){
 		randnum = irandom(array_length(global.dropthese)-1)
@@ -23,7 +23,7 @@ if(!global.fade){
 		
 	}else{
 		//if true quick drop based on current location
-		if(space){
+		if(hold_S){
 			fallSpeed = 10
 					
 		}else{
