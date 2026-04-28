@@ -1,5 +1,5 @@
 global.arrayNum = 5
-global.gamedone = false
+global.gamedone = true
 if(global.fullness[global.arrayNum ] == 0){
 	global.fallSpeed = 1;
 }else if(global.fullness[global.arrayNum ] == 1){

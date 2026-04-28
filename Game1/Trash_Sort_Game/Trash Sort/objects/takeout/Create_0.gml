@@ -1,2 +1,2 @@
 event_inherited(); // keep parent variables
-why = "Do to the black coloring messing with sensors, its not able to recycled and should be thrown in the trash"
+why = "Do to the black coloring messing with sensors, its not able to recycled and should be thrown in the trash\n CLICK SPACE TO GO BACK"

@@ -9,7 +9,7 @@ draw_set_valign(fa_middle);
 
 if(current = 1){
 	draw_set_alpha(1)
-	var txt = "Welcome to St Thomas!\nThe aim of this game is to help you learn where to throw commonly found items on campus!\n (CLICK SPACE TO CONTINUE)";
+	var txt = "Welcome to St Thomas!\n You will be shown items and your job is to sort them\n (CLICK SPACE TO CONTINUE)";
 
 // main text (white)
 draw_set_color(c_white);
@@ -17,30 +17,51 @@ draw_text_ext(room_width/2, room_height/2, txt,125,1000);
 
 }else if (current = 2){
 		draw_set_alpha(1)
-	var txt = "Normally if you throw something into an incorrect bin, the whole batch might be seen as contaminated and sent to a landfill instead of being recycled/composted.\n(CLICK SPACE TO CONTINUE)"
+		draw_set_halign(fa_center);
+draw_set_valign(fa_top);
+	var txt = "Click an object to learn about it when not playing a game\n(CLICK SPACE TO CONTINUE)"
 
-// main text (white)
-draw_set_color(c_white);
-draw_text_ext(room_width/2, room_height/2, txt,100,1000);
+	// main text (white)
+	draw_set_color(c_white);
+	draw_text_ext(room_width/2, room_height/4, txt,100,1000);
+	show = instance_create_layer(640,640,"temp",napkin)
 	
 	
 }else if (current = 3){
-		draw_set_alpha(1)
-	var txt = "After playing one of the levels, you will get a chance to learn about incorrectly sorted items\n(CLICK SPACE TO CONTINUE)"
-// main text (black)
-draw_set_color(c_white);
-draw_text_ext(room_width/2, room_height/2, txt,100,1000);
-	
-	
-}else if (current = 4){
-		draw_set_alpha(1)
-	var txt = "CONTROLS: Use 'A' and 'D' to move left/right \n Click the spacebar to quickly drop the current item \n SCORE: You will see the number of items correctly/incorrectly sorted. For every 5 you get correct, the difficulty level will lower if you replay it. ";
+	if(instance_exists(napkin)and reset1 == 0){
+		instance_destroy(napkin)
+		reset1 +=1
+	}
+	if(!instance_exists(show)){
+		show = instance_create_layer(640,600,"temp",napkin)
+	}
+	var txt = " Use 'A' and 'D' to move left/right \n (CLICK SPACE TO CONTINUE)";
+	if(left and show.x > 320){
+		show.x -= 320
+	}
+	if(right and show.x < 960){
+		show.x += 320
+	}
 // outline (white)
 // main text (black)
 draw_set_color(c_white);
-draw_text_ext(room_width/2, room_height/2, txt,100,1000);
+draw_text_ext(room_width/2, room_height/4, txt,100,1000);
 
 
+	
+}else if (current = 4){
+	if(instance_exists(napkin)){
+		instance_destroy(napkin)
+		reset1 +=1
+	}
+		draw_set_alpha(1)
+	var txt = "The redder the trash can, the fast the items will drop\n (CLICK SPACE TO CONTINUE)";
+// main text (white)
+	draw_set_color(c_white);
+	draw_rectangle(room_width/2-64,room_height*5/7-128,room_width/2+64,room_height*5/7+5, false)
+	draw_sprite_ext(trashcanAnimation, image_index, room_width/2, room_height*5/7, 3, 3, 0, c_white, 1);
+	draw_text_ext(room_width/2, room_height/3, txt,100,1000);
+	
 	
 }else if (current = 5){
 		draw_set_alpha(1)

@@ -105,7 +105,7 @@ if(current = 1){
 		draw_set_valign(fa_top)
 		
 		//tell player about special recycling and about MHC
-		if(global.specRecinfo){
+		if(global.specRecinfo and room == FreyItems){
 			draw_set_alpha(1)
 			var txt = "Some items have special ways to be recycled. Bring certain times to the campus store in Murray-Herrick Center to recycle\n (CLICK SPACE TO CONTINUE)";
 			bin = instance_create_layer(640,960,"gamehigh",sBin)

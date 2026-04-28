@@ -25,3 +25,28 @@ if (room == WrongSortReason) {
         }
     }
 }
+
+if (global.gamedone) {
+
+    if (position_meeting(mouse_x, mouse_y, id) && !viewing) {
+
+        if (mouse_check_button_pressed(mb_left)) {
+
+            viewing = true;
+
+            rect = instance_create_layer(0, 0, "blackbox", whyIncorrect);
+            rect.target = id;
+
+            current = instance_create_layer(200, room_height/2, "Top_dont_add_or_delete", object_index);
+        }
+
+    } 
+    else if (viewing && !instance_exists(rect)) {
+
+        viewing = false;
+
+        if (instance_exists(current)) {
+            instance_destroy(current);
+        }
+    }
+}

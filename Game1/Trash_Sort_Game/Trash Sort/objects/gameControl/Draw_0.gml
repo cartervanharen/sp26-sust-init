@@ -18,16 +18,20 @@ if(!global.fade){
 		randnum = irandom(array_length(global.dropthese)-1)
 		global.dropping = true
 		global.item = instance_create_layer(locX, 200, "gamehigh", global.dropthese[randnum])
+		global.item.image_xscale = .75
+		global.item.image_yscale = .75
 		
 	}else{
 		//if true quick drop based on current location
 		if(space){
-			global.item.y = 940
+			fallSpeed = 10
 					
-			
 		}else{
+			fallSpeed = global.fallSpeed
+		}
+		
 		//moves the item down based on speed
-		global.item.y = global.item.y + global.fallSpeed
+		global.item.y = global.item.y + fallSpeed
 		
 			//if special trash, use these values
 			if(global.hasSpecial){
@@ -54,8 +58,6 @@ if(!global.fade){
 			
 				}
 		
-			
-			}
 		}
 	
 	}

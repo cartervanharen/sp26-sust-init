@@ -31,4 +31,6 @@ endingLoc = random_range(1,4)
 //quickdrop if space is clicked
 space = false
 
+fallSpeed = global.fallSpeed
+
 
