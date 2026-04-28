@@ -17,7 +17,7 @@ if(current = 1){
 //play message 2 until the player clicks space
 }else if (current = 2){
 	draw_set_alpha(1)
-	var txt = "Correctly sorting 5 items will make the trashcan more green \nCLICK SPACE TO CONTINUE"
+	var txt = "Correctly sorting 5 items will make the trashcan more green\nCLICK SPACE TO CONTINUE"
 	// main text (white)
 	draw_set_color(c_white);
 	draw_text_ext(room_width/2, room_height/2, txt,100,1000);
