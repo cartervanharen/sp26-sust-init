@@ -26,9 +26,6 @@ if (!global.pause) {
         if (gameControl.mistakes > 0) {
             room_goto(WrongSortReason);
         } else {
-            if (instance_exists(gameControl)) {
-                instance_destroy(gameControl);
-            }
             global.fade = true;
             global.tp = Map;
         }

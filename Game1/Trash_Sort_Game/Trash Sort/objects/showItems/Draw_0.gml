@@ -109,8 +109,8 @@ if(current = 1){
 			draw_set_alpha(1)
 			var txt = "Some items have special ways to be recycled. Bring certain times to the campus store in Murray-Herrick Center to recycle\n (CLICK SPACE TO CONTINUE)";
 			bin = instance_create_layer(640,960,"gamehigh",sBin)
-			bin.image_xscale = .75
-			bin.image_yscale = .75
+			bin.image_xscale = .5
+			bin.image_yscale = .5
 
 			// main text (white)
 			draw_set_color(c_white);
