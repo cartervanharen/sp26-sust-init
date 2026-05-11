@@ -1,8 +1,8 @@
 if (global.pause) exit;
 
 if (timer > 0) {
-    timer -= 1;
-    alarm[0] = room_speed;
+    timer -= .25;
+    alarm[0] = room_speed/4;
 } 
 else {
     global.tutorial = false;

@@ -4,8 +4,8 @@ if(!global.hasSpecial){
 	lable_y = 100
 
 	row_1 = lable_y+100
-	row_2 = row_1 + 320
-	row_3 = row_2+ 320
+	row_2 = row_1 + 200
+	row_3 = row_2+ 200
 
 
 	column_1 = lable_x 
@@ -22,8 +22,8 @@ if(!global.hasSpecial){
 	lable_x = 160
 	lable_y = 100
 
-	row_1 = lable_y+320
-	row_2 = row_1+ 320
+	row_1 = lable_y+200
+	row_2 = row_1+ 200
 	row_3 = row_2+ 320
 
 
@@ -48,7 +48,7 @@ if(current = 1){
 	// main text (purple)
 	draw_set_alpha(1)
 	draw_set_color(c_white);
-	draw_text_ext(room_width/2, room_height/4, global.buildingdesc,100,1000);
+	draw_text_ext(room_width/2, room_height/8, global.buildingdesc,100,1000);
 
 //if no speical items, show usings these spacings
 }else if (current = 2 and !global.hasSpecial){
@@ -66,35 +66,35 @@ if(current = 1){
 	//trash
 
 	drawing = instance_create_layer(column_1,row_1 ,"gamehigh", global.dropthese[0])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	drawing = instance_create_layer(column_1,row_2 ,"gamehigh", global.dropthese[1])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	drawing = instance_create_layer(column_1,row_3, "gamehigh", global.dropthese[2])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	//recycle
 	drawing = instance_create_layer(column_2 , row_1, "gamehigh", global.dropthese[3])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	drawing = instance_create_layer(column_2 ,row_2, "gamehigh", global.dropthese[4])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	drawing = instance_create_layer(column_2 ,row_3, "gamehigh", global.dropthese[5])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 
 	//org
 	drawing = instance_create_layer(column_3, row_1, "gamehigh", global.dropthese[6])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	drawing = instance_create_layer(column_3 ,row_2, "gamehigh", global.dropthese[7])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	drawing = instance_create_layer(column_3 ,row_3, "gamehigh", global.dropthese[8])
-	drawing.image_xscale = .75
-	drawing.image_yscale = .75
+	drawing.image_xscale = .5
+	drawing.image_yscale = .5
 	
 //if it has special items, draw it based on this spacing
 }else if (current = 2 and global.hasSpecial){
@@ -105,44 +105,44 @@ if(current = 1){
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_top)
 
-			instance_create_layer(lable_x, lable_y+160, "gamehigh", otrash)
-			instance_create_layer(lable_x+320, lable_y+160, "gamehigh", orecycle)
-			instance_create_layer(lable_x+640, lable_y+160, "gamehigh", oorg)
-			instance_create_layer(lable_x+960, lable_y+160, "gamehigh", osprecycle)
+			instance_create_layer(lable_x, lable_y, "gamehigh", otrash)
+			instance_create_layer(lable_x+320, lable_y, "gamehigh", orecycle)
+			instance_create_layer(lable_x+640, lable_y, "gamehigh", oorg)
+			instance_create_layer(lable_x+960, lable_y, "gamehigh", osprecycle)
 
 			//trash
 			drawing = instance_create_layer(column_1 ,row_1, "gamehigh", global.dropthese[0])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 			drawing =instance_create_layer(column_1 , row_2,"gamehigh", global.dropthese[1])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 
 			//recycle
 			drawing =instance_create_layer(column_2 ,row_1, "gamehigh", global.dropthese[2])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 			drawing =instance_create_layer(column_2 , row_2,"gamehigh", global.dropthese[3])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 
 
 			//org
 			drawing =instance_create_layer(column_3 ,row_1, "gamehigh", global.dropthese[4])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 			drawing =instance_create_layer(column_3 ,row_2, "gamehigh", global.dropthese[5])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 
 			//special recycle
 
 			drawing =instance_create_layer(column_3+320 , row_1,"gamehigh", global.dropthese[6])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 			drawing =instance_create_layer(column_3+320,row_2, "gamehigh", global.dropthese[7])
-			drawing.image_xscale = .75
-			drawing.image_yscale = .75
+			drawing.image_xscale = .5
+			drawing.image_yscale = .5
 
 //fall back to draw semi visible black box
 }else{

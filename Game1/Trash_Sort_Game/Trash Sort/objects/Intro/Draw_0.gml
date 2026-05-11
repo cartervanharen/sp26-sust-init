@@ -23,8 +23,8 @@ draw_set_valign(fa_top);
 
 	// main text (white)
 	draw_set_color(c_white);
-	draw_text_ext(room_width/2, room_height/4, txt,100,1000);
-	show = instance_create_layer(640,700,"temp",napkin)
+	draw_text_ext(room_width/2, 100, txt,100,1000);
+	show = instance_create_layer(640,500,"temp",napkin)
 	
 	
 	
@@ -34,7 +34,7 @@ draw_set_valign(fa_top);
 		reset1 +=1
 	}
 	if(!instance_exists(show)){
-		show = instance_create_layer(640,700,"temp",napkin)
+		show = instance_create_layer(640,500,"temp",napkin)
 	}
 	var txt = " Use 'A' and 'D' to move left/right \n (CLICK SPACE TO CONTINUE)";
 	if(left and show.x > 320){
@@ -46,7 +46,7 @@ draw_set_valign(fa_top);
 // outline (white)
 // main text (black)
 draw_set_color(c_white);
-draw_text_ext(room_width/2, room_height/3, txt,100,1000);
+draw_text_ext(room_width/2, 200, txt,100,1000);
 
 
 	

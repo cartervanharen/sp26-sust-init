@@ -9,4 +9,4 @@ draw_set_alpha(1);
 draw_set_color(c_white);
 draw_set_font(font);
 
-draw_text(5, 5, string(timer) + " Seconds");
+draw_text(5, 5, string(round(timer)) + " Seconds");

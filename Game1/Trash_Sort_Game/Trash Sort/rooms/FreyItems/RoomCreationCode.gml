@@ -5,9 +5,9 @@ if(global.fullness[global.arrayNum ] == 0){
 }else if(global.fullness[global.arrayNum ] == 1){
 	global.fallSpeed = 2;
 }else if(global.fullness[global.arrayNum ] == 2){
-	global.fallSpeed = 4;
+	global.fallSpeed = 3;
 }else {
-	global.fallSpeed = 5;
+	global.fallSpeed = 4;
 }
 
 //4
