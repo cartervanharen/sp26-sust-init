@@ -6,7 +6,7 @@ right = keyboard_check_pressed(ord("D"));
 hold_S = keyboard_check(ord("S"));
 
 // spawn item
-if (!global.dropping && !global.gamedone) {
+if (!global.dropping && !global.gamedone &&gameTimer.timer>0) {
 
     randnum = irandom(array_length(global.dropthese) - 1);
 

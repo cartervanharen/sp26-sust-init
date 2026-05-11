@@ -1,6 +1,3 @@
-
-draw_self();
-
 if (room == WrongSortReason) {
 
     if (position_meeting(mouse_x, mouse_y, id) && !viewing) {
