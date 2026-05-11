@@ -5,7 +5,7 @@ if (global.pause && !was_paused) {
 }
 
 if (!global.pause && was_paused) {
-    alarm[0] = saved_alarm != -1 ? saved_alarm : room_speed;
+    alarm[0] = (saved_alarm != -1) ? saved_alarm : room_speed;
     saved_alarm = -1;
     was_paused = false;
 }

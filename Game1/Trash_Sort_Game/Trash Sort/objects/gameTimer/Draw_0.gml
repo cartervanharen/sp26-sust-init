@@ -1,5 +1,6 @@
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
 draw_set_colour(c_black);
 draw_set_alpha(0.75);
 draw_rectangle(0, 0, 1280, 960, false);

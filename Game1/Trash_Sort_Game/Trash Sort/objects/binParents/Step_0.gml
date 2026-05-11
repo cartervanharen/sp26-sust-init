@@ -1,29 +1,37 @@
-if (place_meeting(x, y, global.item) && instance_exists(gameControl)) {
+if (global.gamedone) exit;
 
-    var obj = global.item.object_index;
+if (instance_exists(global.item) && instance_exists(gameControl)) {
 
-    // correct bin
-    if (global.type == type) {
+    if (place_meeting(x, y, global.item)) {
 
-        gameControl.curScore += 1;
-        global.dropping = false;
+        var obj = global.item.object_index;
 
-        instance_create_layer(0, 0, "gamehigh", correct);
-        instance_destroy(global.item);
+        if (global.type == type) {
 
-    // wrong bin
-    } else {
+            gameControl.curScore += 1;
+            global.dropping = false;
 
-        global.dropping = false;
-        gameControl.mistakes += 1;
+            instance_create_layer(0, 0, "gamehigh", correct);
 
-        instance_create_layer(0, 0, "gamehigh", incorrect);
+            var old_item = global.item;
+            global.item = noone;
+            instance_destroy(old_item);
 
-		//store incorrectly stored items for later
-        if (!array_contains(global.badSort, obj)) {
-            array_push(global.badSort, obj);
+        } 
+        else {
+
+            global.dropping = false;
+            gameControl.mistakes += 1;
+
+            instance_create_layer(0, 0, "gamehigh", incorrect);
+
+            if (!array_contains(global.badSort, obj)) {
+                array_push(global.badSort, obj);
+            }
+
+            var old_item = global.item;
+            global.item = noone;
+            instance_destroy(old_item);
         }
-
-        instance_destroy(global.item);
     }
 }
