@@ -4,7 +4,7 @@ if(timer ==0){
 	if (keyboard_check_pressed(vk_space) and current== 1 ){
 		current = 2
 	//move to game if true
-	} else if (!instance_exists(whyIncorrect) and keyboard_check_pressed(vk_space) and current== 2 and (!global.specRecinfo or (room != FreyItems))){
+	} else if (!instance_exists(whyIncorrect) and keyboard_check_pressed(vk_space) and current== 2 ){
 		global.fade = true
 	//show text about special recycling only if not seen yet
 	}else if (keyboard_check_pressed(vk_space) and current== 2 and global.specRecinfo and room == FreyItems ){

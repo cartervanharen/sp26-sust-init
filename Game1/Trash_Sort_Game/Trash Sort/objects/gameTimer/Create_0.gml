@@ -1,6 +1,5 @@
-timer = 20;   
-alarm[0] = 60; 
+timer = 5;
+alarm[0] = room_speed;
 
-//if game should be paused
 saved_alarm = -1;
 was_paused = false;

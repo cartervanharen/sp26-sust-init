@@ -98,30 +98,13 @@ if(current = 1){
 	
 //if it has special items, draw it based on this spacing
 }else if (current = 2 and global.hasSpecial){
+	
 		draw_set_alpha(.5)
-		draw_set_colour(c_black)
-		draw_rectangle(0,0,1280,960,false)
-		draw_set_halign(fa_center)
-		draw_set_valign(fa_top)
-		
-		//tell player about special recycling and about MHC
-		if(global.specRecinfo and room == FreyItems){
-			draw_set_alpha(1)
-			var txt = "Some items have special ways to be recycled. Bring certain times to the campus store in Murray-Herrick Center to recycle\n (CLICK SPACE TO CONTINUE)";
-			bin = instance_create_layer(640,960,"gamehigh",sBin)
-			bin.image_xscale = .5
-			bin.image_yscale = .5
+	draw_set_colour(c_black)
+	draw_rectangle(0,0,1280,960,false)
+	draw_set_halign(fa_center)
+	draw_set_valign(fa_top)
 
-			// main text (white)
-			draw_set_color(c_white);
-			draw_text_ext(room_width/2, 50, txt,125,1000);
-			
-		}else{	
-			draw_set_halign(fa_center)
-			draw_set_valign(fa_top)
-			if(instance_exists(sBin)){
-				instance_destroy(sBin)
-			}
 			instance_create_layer(lable_x, lable_y+160, "gamehigh", otrash)
 			instance_create_layer(lable_x+320, lable_y+160, "gamehigh", orecycle)
 			instance_create_layer(lable_x+640, lable_y+160, "gamehigh", oorg)
@@ -160,7 +143,6 @@ if(current = 1){
 			drawing =instance_create_layer(column_3+320,row_2, "gamehigh", global.dropthese[7])
 			drawing.image_xscale = .75
 			drawing.image_yscale = .75
-		}
 
 //fall back to draw semi visible black box
 }else{

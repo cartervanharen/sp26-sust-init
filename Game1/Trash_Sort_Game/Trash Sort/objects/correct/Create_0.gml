@@ -1,1 +1,1 @@
-temp_alpha = .1
+temp_alpha = .3

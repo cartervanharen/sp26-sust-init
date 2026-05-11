@@ -1,5 +1,6 @@
 draw_set_font(font)
 global.gamedone = true
+global.pause = false
 
 if(global.tutorial){
 	instance_create_layer(0,0,"tutorial", Intro)

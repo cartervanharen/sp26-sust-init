@@ -19,6 +19,7 @@ if (point_in_rectangle(mouse_x, mouse_y, left, top, right, bottom)) {
 
     if (clicked) {
 		room_goto(Map)
+		global.pause = false
     }
 
 } else {
