@@ -47,17 +47,17 @@ export class FridgeSortScene extends Phaser.Scene {
     this.scoreText = this.add.text(20, 20, `Sorted: ${this.score} / ${this.totalItems}`, {
         fontFamily: "system-ui, sans-serif",
         fontSize: "20px",
-        color: "#2ecc71", 
-        fontWeight: "bold"
+        color: "#2ecc71",
+        fontStyle: "bold"
     });
 
     // 5. Timer display
     this.timerText = this.add.text(this.scale.width - 20, 20, `Time: ${this.timeLeft}`, {
       fontFamily: "system-ui, sans-serif",
       fontSize: "20px",
-      color: "#ffffff", 
-      fontWeight: "bold"
-    }).setOrigin(1, -27);
+      color: "#ffffff",
+      fontStyle: "bold"
+    }).setOrigin(1, 0);
 
     // 6. Start the countdown timer
     this.time.addEvent({
