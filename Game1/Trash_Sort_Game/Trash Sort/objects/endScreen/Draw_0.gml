@@ -13,8 +13,4 @@ var txt = "You did great sorting the items! \nPlease continue to learn where oth
 draw_set_color(c_white);
 draw_text_ext(room_width/2, room_height/2, txt,125,1000);
 
-//go back to title if space is clicked and once intentional delay is over
-if(keyboard_check_pressed(vk_space) and timer = 0){
-	room_goto(Title)
-}
 

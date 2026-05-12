@@ -12,12 +12,11 @@ export class StoryScene extends Phaser.Scene {
     this.history = data.history || [];
     this.choiceObjects = [];
     this.typewriterTimer = null;
+    this.processingChoice = false;
   }
 
   create() {
     this.cameras.main.setBackgroundColor("#1a2a1a");
-
-    this.drawStatusBar();
 
     const scenario = scenarioData.scenarios.find(s => s.id === this.currentId);
     if (!scenario) {
@@ -28,7 +27,37 @@ export class StoryScene extends Phaser.Scene {
       return;
     }
 
+    this.drawStatusBar();
+    this.drawSceneImage(scenario);
     this.drawScenario(scenario);
+  }
+
+  drawSceneImage(scenario) {
+    if (!scenario.background || !this.textures.exists(scenario.background)) {
+      return;
+    }
+
+    const cx = 500;
+    const cy = 470;
+    const maxW = 820;
+    const maxH = 440;
+
+    const img = this.add.image(cx, cy, scenario.background);
+    const tex = img.texture.getSourceImage();
+    const scale = Math.min(maxW / tex.width, maxH / tex.height);
+    img.setScale(scale);
+
+    const w = img.displayWidth;
+    const h = img.displayHeight;
+
+    const shadow = this.add.graphics();
+    shadow.fillStyle(0x000000, 0.4);
+    shadow.fillRoundedRect(cx - w / 2 - 4, cy - h / 2 - 4 + 8, w + 8, h + 8, 10);
+    shadow.setDepth(-1);
+
+    const frame = this.add.graphics();
+    frame.lineStyle(4, 0x4a7c59);
+    frame.strokeRoundedRect(cx - w / 2 - 4, cy - h / 2 - 4, w + 8, h + 8, 10);
   }
 
   drawStatusBar() {
@@ -82,12 +111,12 @@ export class StoryScene extends Phaser.Scene {
       fontStyle: "bold",
     }).setOrigin(0.5);
 
-    this.promptText = this.add.text(120, 250, "", {
+    this.promptText = this.add.text(960, 250, "", {
       fontFamily: "Georgia, 'Times New Roman', serif",
-      fontSize: "36px",
+      fontSize: "38px",
       color: "#dce8dc",
-      wordWrap: { width: 1680 },
-      lineSpacing: 12,
+      wordWrap: { width: 900 },
+      lineSpacing: 14,
     });
 
     this.typewriterEffect(scenario.prompt, this.promptText, () => {
@@ -128,8 +157,10 @@ export class StoryScene extends Phaser.Scene {
   }
 
   showChoices(scenario) {
-    const startY = 700;
-    const spacing = 140;
+    const choiceCount = scenario.choices.length;
+    const spacing = choiceCount >= 4 ? 110 : 120;
+    const blockHeight = (choiceCount - 1) * spacing;
+    const startY = Math.min(820, 1230 - blockHeight);
 
     scenario.choices.forEach((choice, i) => {
       const y = startY + i * spacing;
@@ -150,7 +181,7 @@ export class StoryScene extends Phaser.Scene {
 
       const label = this.add.text(-700, 0, choice.text, {
         fontFamily: "Georgia, 'Times New Roman', serif",
-        fontSize: "32px",
+        fontSize: "36px",
         color: "#dce8dc",
         wordWrap: { width: 1440 },
       }).setOrigin(0, 0.5);
@@ -183,7 +214,9 @@ export class StoryScene extends Phaser.Scene {
         bg.strokeRoundedRect(-800, -50, 1600, 100, 16);
       });
 
-      container.on("pointerdown", () => {
+      container.once("pointerdown", () => {
+        if (this.processingChoice) return;
+        this.choiceObjects.forEach(c => c.disableInteractive());
         this.handleChoice(scenario, choice);
       });
 
@@ -192,9 +225,26 @@ export class StoryScene extends Phaser.Scene {
   }
 
   handleChoice(scenario, choice) {
+    if (this.processingChoice) return;
+    this.processingChoice = true;
+
+    this.tweens.killTweensOf(this.choiceObjects);
     this.choiceObjects.forEach(c => {
-      c.removeInteractive();
-      c.destroy();
+      if (!c || !c.scene) return;
+      try {
+        c.disableInteractive();
+        c.removeAllListeners();
+        if (c.list) {
+          c.list.slice().forEach(child => {
+            if (child && child.destroy) child.destroy();
+          });
+        }
+        c.setVisible(false);
+        c.setActive(false);
+        c.destroy();
+      } catch (e) {
+        // ignore — best-effort teardown
+      }
     });
     this.choiceObjects = [];
 
@@ -220,26 +270,29 @@ export class StoryScene extends Phaser.Scene {
     const boxY = 700;
     const boxH = 460;
 
+    const FEEDBACK_DEPTH = 1000;
+
     const feedbackBg = this.add.graphics();
     feedbackBg.fillStyle(0x0f1a0f, 1);
     feedbackBg.fillRoundedRect(boxX, boxY, boxW, boxH, 20);
     feedbackBg.lineStyle(4, choice.points > 0 ? 0x4a7c59 : choice.points < 0 ? 0x8b3a3a : 0x8b7a3a);
     feedbackBg.strokeRoundedRect(boxX, boxY, boxW, boxH, 20);
+    feedbackBg.setDepth(FEEDBACK_DEPTH);
 
     this.add.text(cw / 2, boxY + 50, pointLabel, {
       fontFamily: "'Courier New', monospace",
       fontSize: "40px",
       color: pointColor,
       fontStyle: "bold",
-    }).setOrigin(0.5);
+    }).setOrigin(0.5).setDepth(FEEDBACK_DEPTH + 1);
 
     const feedbackText = this.add.text(boxX + 80, boxY + 130, "", {
       fontFamily: "Georgia, 'Times New Roman', serif",
-      fontSize: "32px",
+      fontSize: "36px",
       color: "#c8d8c8",
       wordWrap: { width: boxW - 160 },
-      lineSpacing: 10,
-    });
+      lineSpacing: 12,
+    }).setDepth(FEEDBACK_DEPTH + 1);
 
     this.typewriterEffect(choice.feedback, feedbackText, () => {
       this.showContinueButton(choice.next);
@@ -248,6 +301,7 @@ export class StoryScene extends Phaser.Scene {
 
   showContinueButton(nextId) {
     const btn = this.add.container(this.scale.width / 2, 1100);
+    btn.setDepth(1002);
 
     const bg = this.add.graphics();
     bg.fillStyle(0x4a7c59, 1);

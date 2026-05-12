@@ -3,6 +3,7 @@
   "scenarios": [
     {
       "id": "morning",
+      "background": "bg_morrison",
       "title": "MORRISON HALL — 7:45 AM",
       "prompt": "Your alarm blares at 7:45 AM. Pale morning light filters through your dorm window in Morrison Hall. Your 8:00 AM Environmental Studies class starts in fifteen minutes. The campus quad is a ten-minute walk away, but your car is parked in the lot just outside. What do you do?",
       "choices": [
@@ -38,6 +39,7 @@
     },
     {
       "id": "parking",
+      "background": "bg_campuswalkway",
       "title": "CRETIN-DERHAM LOT — 8:05 AM",
       "prompt": "You pull into the Cretin-Derham parking lot. Every single spot is taken. Cars circle like sharks, engines rumbling, exhaust clouding the cold morning air. A line of brake lights stretches around the corner. You're already late.",
       "choices": [
@@ -66,6 +68,7 @@
     },
     {
       "id": "security",
+      "background": "bg_campuswalkway",
       "title": "CRETIN LOT — 9:30 AM",
       "prompt": "Class ends and you walk back to your car. A bright orange Public Safety warning ticket is tucked under your windshield wiper: 'VEHICLE PARKED IN VIOLATION — SUBJECT TO TOW.' A campus security officer is still nearby, writing up another car.",
       "choices": [
@@ -87,6 +90,7 @@
     },
     {
       "id": "power_choice",
+      "background": "bg_campuswalkway",
       "title": "CAMPUS WALKWAY — 10:00 AM",
       "prompt": "As you're walking between classes, a nagging thought hits you — you left your dorm in a rush this morning. Something is still running back in your room right now, wasting energy. What did you forget?",
       "choices": [
@@ -115,6 +119,7 @@
     },
     {
       "id": "heating",
+      "background": "bg_morrison",
       "title": "MORRISON HALL DORM — 10:20 AM",
       "prompt": "Back in your room, it's chilly. The old radiator barely keeps up with the Minnesota wind seeping through the single-pane windows. The thermostat dial is right there on the wall, and you've got a hoodie draped over your chair.",
       "choices": [
@@ -143,6 +148,7 @@
     },
     {
       "id": "dining",
+      "background": "bg_lowerquad",
       "title": "UPPER QUAD — 12:15 PM",
       "prompt": "Your stomach growls. It's 12:15 and the lunch rush is on. From the upper quad you can see Anderson Dining Hall bustling with students, the Scooter's sign glowing inside the Student Center, and a line forming at the food trucks near the Law School. You also packed a lunch this morning... if you remembered to grab it.",
       "choices": [
@@ -178,6 +184,7 @@
     },
     {
       "id": "food_truck_scene",
+      "background": "bg_lowerquad",
       "title": "FOOD TRUCKS — SCHOOL OF LAW — 12:30 PM",
       "prompt": "You ordered from 'Sizzle & Greens,' a popular truck parked near the Law School. The cook hands you your meal in a styrofoam container inside a plastic bag, with a fistful of napkins, three sauce packets you didn't ask for, and a plastic fork still in its wrapper.",
       "choices": [
@@ -206,6 +213,7 @@
     },
     {
       "id": "waste_challenge",
+      "background": "bg_lowerquad",
       "title": "THE QUAD — 1:00 PM",
       "prompt": "On your way back from lunch, you spot a booth on the quad with a bright banner: 'KNOW YOUR WASTE CHALLENGE — WIN A PRIZE!' A cheerful student volunteer hands you three items: a plastic bottle cap, a greasy pizza box, and a paper coffee cup with a plastic lining. 'Sort them into the right bins!' she says with a grin.",
       "choices": [
@@ -234,6 +242,7 @@
     },
     {
       "id": "fast_fashion",
+      "background": "bg_library",
       "title": "O'SHAUGHNESSY-FREY LIBRARY — 2:30 PM",
       "prompt": "After your afternoon class, you walk through the O'Shaughnessy-Frey Library lobby and spot a pop-up event: 'TOMMIE THRIFT — Sustainable Fashion Week.' A display reads: 'The fashion industry produces 10% of global carbon emissions and is the second-largest consumer of water worldwide. 85% of all textiles end up in landfills.' A table is piled with gently-used clothes donated by students and staff.",
       "choices": [
@@ -262,6 +271,7 @@
     },
     {
       "id": "evening",
+      "background": "bg_morrison",
       "title": "MORRISON HALL — 9:00 PM",
       "prompt": "The sun has set over the St. Thomas campus. You're back in your dorm room after a full day of classes, decisions, and discoveries. As you settle in for the evening, you think about one last thing before bed.",
       "choices": [

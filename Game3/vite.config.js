@@ -3,6 +3,8 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: ".",
+  // Relative URLs so dist/ works under /Game3/dist/ (catalogue or static hosting).
+  base: "./",
   server: {
     port: 5174,
     open: true,
