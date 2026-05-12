@@ -6,7 +6,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:game3": "npm run build --prefix Game3"
+    "build:game3": "npm run build --prefix Game3",
+    "build:game2": "npm run build --prefix Game2",
+    "build:site": "npm run build && npm run build:game3 && npm run build:game2 && node scripts/package-site.mjs",
+    "render-build": "npm install && npm install --prefix Game3 && npm install --prefix Game2 && npm run build:site"
   },
   "devDependencies": {
     "vite": "^6.4.2"
