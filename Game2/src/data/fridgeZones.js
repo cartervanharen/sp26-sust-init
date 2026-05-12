@@ -10,37 +10,42 @@
 export const FRIDGE_ZONES = [
   {
     zoneId: "top_shelf",
-    label: "Top Shelf (Ready-to-eat)",
-    rect: { x: 120, y: 60, w: 400, h: 80 },
+    label: "Top Shelf",
+    rect: { x: 250, y: 35, w: 450, h: 70 },
   },
   {
-    zoneId: "middle_shelf",
-    label: "Middle Shelf (Dairy)",
-    rect: { x: 120, y: 150, w: 400, h: 80 },
+    zoneId: "middle_shelf", // Matches 'middle_shelf' in catalog
+    label: "Middle Shelf",
+    rect: { x: 250, y: 120, w: 450, h: 132 },
   },
   {
     zoneId: "bottom_shelf",
-    label: "Bottom Shelf (Raw Meat)",
-    rect: { x: 120, y: 240, w: 400, h: 80 },
+    label: "Bottom Shelf",
+    rect: { x: 250, y: 260, w: 450, h: 55 },
   },
   {
-    zoneId: "crisper",
-    label: "Crisper Drawer",
-    rect: { x: 120, y: 330, w: 280, h: 100 },
+    zoneId: "crisper", // Matches 'crisper' in catalog
+    label: "Crisper (Left)",
+    rect: { x: 250, y: 330, w: 170, h: 90 },
+  },
+  {
+    zoneId: "crisper", // Matches 'crisper' in catalog
+    label: "Crisper (Right)",
+    rect: { x: 430, y: 330, w: 300, h: 90 },
   },
   {
     zoneId: "door",
     label: "Fridge Door",
-    rect: { x: 540, y: 60, w: 120, h: 370 },
+    rect: { x: 730, y: 20, w: 210, h: 500 },
   },
   {
     zoneId: "freezer",
     label: "Freezer",
-    rect: { x: 120, y: 440, w: 540, h: 100 },
+    rect: { x: 250, y: 450, w: 450, h: 200 },
   },
   {
     zoneId: "outside",
     label: "Pantry / Outside",
-    rect: { x: 10, y: 60, w: 100, h: 480 },
+    rect: { x: 20, y: 60, w: 150, h: 500 },
   }
 ];

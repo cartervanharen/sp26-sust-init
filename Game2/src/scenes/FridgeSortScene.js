@@ -1,56 +1,65 @@
 import Phaser from "phaser";
 import { FRIDGE_ZONES } from "../data/fridgeZones.js";
-import { ITEMS_CATALOG } from "../data/itemsCatalog.js";
+import { LEVELS_DATA } from "../data/itemsCatalog.js";
 
-/**
- * Main gameplay: drag items into the correct fridge zone for sustainability.
- * Skeleton only — zones and item placeholders are drawn for layout iteration.
- */
 export class FridgeSortScene extends Phaser.Scene {
   constructor() {
     super({ key: "FridgeSortScene" });
   }
 
+  /**
+   * Captures the level passed from the previous scene or restart.
+   * If no level is passed, it defaults to Level 1.
+   */
+  init(data) {
+    this.currentLevel = data.level || 1;
+    const levelConfig = LEVELS_DATA[this.currentLevel] || LEVELS_DATA[1];
+    
+    this.levelItems = levelConfig.items;
+    this.timeLeft = levelConfig.timeLimit;
+    this.score = 0;
+    this.totalItems = this.levelItems.length;
+  }
+
   create() {
-    this.add.text(this.scale.width / 2, 28, "Fridge Sort", {
+    // 1. Background (using the key 'fridge_bg' from PreloadScene)
+    this.add.image(this.scale.width / 2, this.scale.height / 2, 'fridge_bg')
+            .setDisplaySize(this.scale.width, this.scale.height);
+
+    // 2. UI Header Overlay
+    this.add.graphics()
+        .fillStyle(0x000000, 0.3)
+        .fillRect(0, 0, this.scale.width, 60);
+
+    this.add.text(this.scale.width / 2, 28, `Level ${this.currentLevel}: Fridge Sort`, {
       fontFamily: "system-ui, sans-serif",
       fontSize: "20px",
       color: "#ecf0f1",
     }).setOrigin(0.5);
 
-    
+    // 3. Initialize Game Elements
     this.createAllZones();
-
     this.spawnDraggableItems();
-
     this.setupDragEvents();
-
     this.inGameMenu();
 
-    //score
-    this.score = 0;
-    this.totalItems = ITEMS_CATALOG.length;
-
-    this.scoreText = this.add.text(20, 20, `Items Sorted: ${this.score} / ${this.totalItems}`, {
+    // 4. Score display
+    this.scoreText = this.add.text(20, 20, `Sorted: ${this.score} / ${this.totalItems}`, {
         fontFamily: "system-ui, sans-serif",
-        fontSize: "24px",
+        fontSize: "20px",
         color: "#2ecc71", 
         fontWeight: "bold"
     });
 
-
-
-
-    //timer
-    this.timeLeft = 60;
-
+    // 5. Timer display
     this.timerText = this.add.text(this.scale.width - 20, 20, `Time: ${this.timeLeft}`, {
       fontFamily: "system-ui, sans-serif",
-      fontSize: "24px",
-      color: "#f4efee", 
+      fontSize: "20px",
+      color: "#ffffff", 
       fontWeight: "bold"
-    }).setOrigin(1, -22);
+    }).setOrigin(1, -27);
 
+    // 6. Start the countdown timer
     this.time.addEvent({
       delay: 1000,
       callback: this.updateTimer,
@@ -65,26 +74,24 @@ export class FridgeSortScene extends Phaser.Scene {
         const zone = this.add.zone(x + w / 2, y + h / 2, w, h).setRectangleDropZone(w, h);
         zone.setData("zoneId", z.zoneId);
 
-        // outlines for zones
+        // Optional: outlines for debugging or layout guide
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x7f8c8d, 0.5);
         graphics.strokeRect(x, y, w, h);
         
-        // zone labels
         this.add.text(x + 5, y + 5, z.label, { fontSize: "10px", color: "#7f8c8d" });
     });
-}
+  }
 
   spawnDraggableItems() {
-    ITEMS_CATALOG.forEach((item, i) => {
-      const startX = 60;
-      const startY = 130 + i * 60;
+    this.levelItems.forEach((item, i) => {
+      const startX = 85;
+      const startY = 100 + (i * 70); 
 
-      //visual container for the food item 
       const container = this.add.container(startX, startY);
       const bg = this.add.graphics();
       bg.fillStyle(0x3498db, 1);
-      bg.fillRoundedRect(-40, -20, 80, 40, 6);
+      bg.fillRoundedRect(-50, -20, 100, 40, 6);
       
       const label = this.add.text(0, 0, item.label, {
         fontSize: "14px",
@@ -92,10 +99,9 @@ export class FridgeSortScene extends Phaser.Scene {
       }).setOrigin(0.5);
 
       container.add([bg, label]);
-      container.setSize(80, 40);
+      container.setSize(100, 40);
       container.setInteractive({ draggable: true });
       
-      // attach metadata for validation 
       container.setData("itemData", item);
       container.setData("originX", startX);
       container.setData("originY", startY);
@@ -105,7 +111,7 @@ export class FridgeSortScene extends Phaser.Scene {
   setupDragEvents() {
     this.input.on('dragstart', (pointer, gameObject) => {
       this.children.bringToTop(gameObject);
-      gameObject.setScale(1.1); // gets bigger when picked up
+      gameObject.setScale(1.1);
     });
 
     this.input.on('drag', (pointer, gameObject, dragX, dragY) => {
@@ -121,21 +127,19 @@ export class FridgeSortScene extends Phaser.Scene {
           gameObject.x = dropZone.x;
           gameObject.y = dropZone.y;
           
-          // Prevent re-scoring the same item if it's already "locked" (optional)
           if (!gameObject.getData("isSorted")) {
               this.score++;
               gameObject.setData("isSorted", true);
-              this.scoreText.setText(`Items Sorted: ${this.score} / ${this.totalItems}`);
+              this.scoreText.setText(`Sorted: ${this.score} / ${this.totalItems}`);
           }
 
-          // Success Check: Is the fridge fully sorted? [cite: 3, 9]
           if (this.score === this.totalItems) {
               this.handleWin();
           }
       } else {
           this.returnToOrigin(gameObject);
       }
-  });
+    });
 
     this.input.on('dragend', (pointer, gameObject, dropped) => {
       gameObject.setScale(1.0);
@@ -145,39 +149,62 @@ export class FridgeSortScene extends Phaser.Scene {
     });
   }
 
-  inGameMenu() {
+  updateTimer() {
+    this.timeLeft--;
+    this.timerText.setText(`Time: ${this.timeLeft}`);
     
-    const menuBtn = this.add.text(this.scale.width - 150, 20, "MENU", {
-        fontFamily: "-apple-system, sans-serif",
+    if (this.timeLeft <= 0) {
+        window.location.href = 'gameover.html';
+    }
+  }
+
+  handleWin() {
+    const winText = this.add.text(this.scale.width / 2, this.scale.height / 2, "PERFECTLY SORTED!", {
+        fontSize: "48px",
+        fill: "#2ecc71",
+        stroke: "#000",
+        strokeThickness: 6
+    }).setOrigin(0.5).setDepth(200);
+
+    this.time.delayedCall(2000, () => {
+        const nextLevel = this.currentLevel + 1;
+        
+        if (LEVELS_DATA[nextLevel]) {
+            this.scene.restart({ level: nextLevel });
+        } else {
+            window.location.href = 'nextLevel.html'; 
+        }
+    });
+  }
+
+  returnToOrigin(gameObject) {
+    gameObject.x = gameObject.getData("originX");
+    gameObject.y = gameObject.getData("originY");
+  }
+
+  inGameMenu() {
+    const menuBtn = this.add.text(this.scale.width - 80, 20, "MENU", {
+        fontFamily: "system-ui, sans-serif",
         fontSize: "18px",
         backgroundColor: "#34495e",
         padding: { x: 10, y: 5 },
         color: "#ffffff"
-    }).setInteractive({ useHandCursor: true });
+    }).setOrigin(1, 0).setInteractive({ useHandCursor: true });
 
-    //popup
     this.menuPanel = this.add.container(this.scale.width / 2, this.scale.height / 2).setVisible(false).setDepth(100);
 
     const bg = this.add.graphics();
     bg.fillStyle(0x2c3e50, 0.95);
     bg.fillRoundedRect(-100, -80, 200, 160, 10);
-    bg.lineStyle(2, 0x7f8c8d);
-    bg.strokeRoundedRect(-100, -80, 200, 160, 10);
 
-    // restart button
     const restartBtn = this.add.text(0, -30, "Restart Level", {
-        fontFamily: "-apple-system, sans-serif",
-        fontSize: "18px",
         backgroundColor: "#27ae60",
         padding: { x: 20, y: 10 },
         fixedWidth: 160,
         align: 'center'
     }).setOrigin(0.5).setInteractive({ useHandCursor: true });
 
-    // mainmenu button
     const exitBtn = this.add.text(0, 40, "Main Menu", {
-        fontFamily: "-apple-system, sans-serif",
-        fontSize: "18px",
         backgroundColor: "#e74c3c",
         padding: { x: 20, y: 10 },
         fixedWidth: 160,
@@ -186,38 +213,16 @@ export class FridgeSortScene extends Phaser.Scene {
 
     this.menuPanel.add([bg, restartBtn, exitBtn]);
 
-    //button logic
     menuBtn.on('pointerdown', () => {
         this.menuPanel.setVisible(!this.menuPanel.visible);
     });
 
     restartBtn.on('pointerdown', () => {
-        this.scene.restart(); 
+        this.scene.restart({ level: this.currentLevel }); 
     });
 
     exitBtn.on('pointerdown', () => {
         window.location.href = 'index.html';
     });
-}
-
-  updateTimer() {
-    this.timeLeft--;
-
-    // Update the display
-    this.timerText.setText(`Time: ${this.timeLeft}`);
-    if (this.timeLeft <= 0) {
-        window.location.href = 'gameover.html';
-    }
-}
-
-handleWin() {
-    this.time.delayedCall(500, () => {
-        window.location.href = 'nextLevel.html'; 
-    });
-}
-
-  returnToOrigin(gameObject) {
-    gameObject.x = gameObject.getData("originX");
-    gameObject.y = gameObject.getData("originY");
   }
 }

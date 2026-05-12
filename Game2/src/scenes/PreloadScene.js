@@ -18,6 +18,8 @@ export class PreloadScene extends Phaser.Scene {
         color: "#ecf0f1",
       })
       .setOrigin(0.5);
+
+      this.load.image('fridge_bg', '/fridge.png');
   }
 
   create() {
