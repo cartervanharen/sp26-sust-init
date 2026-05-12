@@ -228,11 +228,23 @@ export class StoryScene extends Phaser.Scene {
     if (this.processingChoice) return;
     this.processingChoice = true;
 
+    this.tweens.killTweensOf(this.choiceObjects);
     this.choiceObjects.forEach(c => {
-      c.disableInteractive();
-      c.removeAllListeners();
-      c.setVisible(false);
-      c.destroy();
+      if (!c || !c.scene) return;
+      try {
+        c.disableInteractive();
+        c.removeAllListeners();
+        if (c.list) {
+          c.list.slice().forEach(child => {
+            if (child && child.destroy) child.destroy();
+          });
+        }
+        c.setVisible(false);
+        c.setActive(false);
+        c.destroy();
+      } catch (e) {
+        // ignore — best-effort teardown
+      }
     });
     this.choiceObjects = [];
 
@@ -258,18 +270,21 @@ export class StoryScene extends Phaser.Scene {
     const boxY = 700;
     const boxH = 460;
 
+    const FEEDBACK_DEPTH = 1000;
+
     const feedbackBg = this.add.graphics();
     feedbackBg.fillStyle(0x0f1a0f, 1);
     feedbackBg.fillRoundedRect(boxX, boxY, boxW, boxH, 20);
     feedbackBg.lineStyle(4, choice.points > 0 ? 0x4a7c59 : choice.points < 0 ? 0x8b3a3a : 0x8b7a3a);
     feedbackBg.strokeRoundedRect(boxX, boxY, boxW, boxH, 20);
+    feedbackBg.setDepth(FEEDBACK_DEPTH);
 
     this.add.text(cw / 2, boxY + 50, pointLabel, {
       fontFamily: "'Courier New', monospace",
       fontSize: "40px",
       color: pointColor,
       fontStyle: "bold",
-    }).setOrigin(0.5);
+    }).setOrigin(0.5).setDepth(FEEDBACK_DEPTH + 1);
 
     const feedbackText = this.add.text(boxX + 80, boxY + 130, "", {
       fontFamily: "Georgia, 'Times New Roman', serif",
@@ -277,7 +292,7 @@ export class StoryScene extends Phaser.Scene {
       color: "#c8d8c8",
       wordWrap: { width: boxW - 160 },
       lineSpacing: 12,
-    });
+    }).setDepth(FEEDBACK_DEPTH + 1);
 
     this.typewriterEffect(choice.feedback, feedbackText, () => {
       this.showContinueButton(choice.next);
@@ -286,6 +301,7 @@ export class StoryScene extends Phaser.Scene {
 
   showContinueButton(nextId) {
     const btn = this.add.container(this.scale.width / 2, 1100);
+    btn.setDepth(1002);
 
     const bg = this.add.graphics();
     bg.fillStyle(0x4a7c59, 1);
