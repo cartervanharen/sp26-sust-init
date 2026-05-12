@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Sustainability Games</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a22; /* Matches your game background */
+            font-family: 'system-ui', -apple-system, sans-serif;
+            color: #ecf0f1;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            background: #34495e; /* Matches your menu containers */
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            margin: 20px;
+        }
+
+        h1 {
+            color: #2ecc71; /* Green accent from your scoring UI */
+            margin-top: 0;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            border-bottom: 2px solid #7f8c8d;
+            padding-bottom: 10px;
+            margin-top: 2rem;
+        }
+
+        .authors-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .authors-list li {
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .goals-list {
+            margin-top: 1rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 20px;
+            background-color: #520C77; /* Matches your primary button color */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-back:hover {
+            background-color: #70388e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>About the Project</h1>
+        
+        <p>This platform was developed as a <strong>CS Capstone</strong> project to merge interactive entertainment with environmental education.</p>
+
+        <h2>The Team</h2>
+        <ul class="authors-list">
+            <li>Carter</li>
+            <li>Alseny</li>
+            <li>Raiyann</li>
+            <li>Ibrahima</li>
+        </ul>
+
+        <h2>Our Goals</h2>
+        <div class="goals-list">
+            <p>Our sustainability games are designed with the following core objectives:</p>
+            <ul>
+                <li><strong>Educational Impact:</strong> Teach real-world habits, such as proper food storage rules, through intuitive gameplay.</li>
+                <li><strong>Safety & Awareness:</strong> Demonstrate why correct placement matters—showing how organization reduces contamination risks and optimizes food safety.</li>
+                <li><strong>Engagement:</strong> Create a learning environment that feels simple and intuitive without being boring, making sustainability accessible to everyone.</li>
+                <li><strong>Feedback-Driven Learning:</strong> Reinforce environmental concepts through immediate feedback and repetitive positive habits.</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-back">← Back to Games</a>
+    </div>
+
+</body>
+</html>
