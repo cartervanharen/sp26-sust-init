@@ -14,6 +14,11 @@ export class PreloadScene extends Phaser.Scene {
       fontSize: "48px",
       color: "#8fbc8f",
     }).setOrigin(0.5);
+
+    this.load.image("bg_morrison", "assets/morrison.jpg");
+    this.load.image("bg_campuswalkway", "assets/campuswalkway.jpg");
+    this.load.image("bg_lowerquad", "assets/lowerquad.jpg");
+    this.load.image("bg_library", "assets/library.jpg");
   }
 
   create() {
