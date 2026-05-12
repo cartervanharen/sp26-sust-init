@@ -22,12 +22,73 @@
 
         <!-- Set the background colour of the document -->
         <style>
+            :root {
+                --ust-purple: #512698;
+                --ust-white: #ffffff;
+                --ust-grey: #999999;
+                --background: #ffffff;
+            }
+
             body {
-                background: #0;
-                color: #cccccc;
-                margin: 0px;
-                padding: 0px;
-                border: 0px;
+                background: var(--background);
+                margin: 0;
+                padding: 0;
+                border: 0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: #333333;
+            }
+
+            .top-bar {
+                width: 100%;
+                max-width: 1280px;
+                background: var(--ust-purple);
+                padding: 1rem 1.5rem;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0 0 16px 16px;
+                margin-top: 1rem;
+            }
+
+            .back-btn {
+                background-color: var(--ust-white);
+                color: var(--ust-purple);
+                text-decoration: none;
+                padding: 0.75rem 1rem;
+                border-radius: 999px;
+                font-weight: bold;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+                transition: transform 0.2s ease, background-color 0.2s ease;
+            }
+
+            .back-btn:hover {
+                background-color: #f4f4f4;
+                transform: translateY(-1px);
+            }
+
+            .game-shell {
+                width: 100%;
+                max-width: 1280px;
+                padding: 2rem 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: var(--background);
+                box-sizing: border-box;
+            }
+
+            .gm4html5_div_class {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                border: 0;
             }
 
             canvas {
@@ -35,20 +96,21 @@
                 -webkit-interpolation-mode: nearest-neighbor;
                 -ms-touch-action: none;
                 touch-action: none;
-                margin: 0px;
-                padding: 0px;
-                border: 0px;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                width: 100%;
+                max-width: 1280px;
+                height: auto;
+                display: block;
+                background: #000;
             }
+
             :-webkit-full-screen #canvas {
                 width: 100%;
                 height: 100%;
             }
-            :-webkit-full-screen {
-                width: 100%;
-                height: 100%;
-            }
-            
-            /* Custom Runner Styles */
+
             div.gm4html5_div_class {
                 margin: 0px;
                 padding: 0px;
@@ -73,7 +135,6 @@
                 text-align: center;
             }
             /* END - Custom Runner Styles */
-            
         </style>
 
         <!-- Custom PostStyle code is injected here -->
@@ -92,23 +153,25 @@
     <body>
         <!-- Custom BodyStart code is injected here -->
         
+        <div class="page-wrapper">
+            <div class="top-bar">
+                <a href="../index.html" class="back-btn">Back to Catalogue</a>
+            </div>
 
-        <div class="gm4html5_div_class" id="gm4html5_div_id">
-            
-            <!-- Builtin injector for splash screen -->
-            
-
-            <!-- Custom PreCanvas code is injected here -->
-            
-
-            <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas" width="1280" height="720" >
-                
-                <p>Your browser doesn't support HTML5 canvas.</p>
-            </canvas>
-            
-            <!-- Custom PostCanvas code is injected here -->
-            
+            <div class="game-shell">
+                <div class="gm4html5_div_class" id="gm4html5_div_id">
+                    <!-- Builtin injector for splash screen -->
+                    
+                    <!-- Custom PreCanvas code is injected here -->
+                    
+                    <!-- Create the canvas element the game draws to -->
+                    <canvas id="canvas" width="1280" height="720" >
+                        <p>Your browser doesn't support HTML5 canvas.</p>
+                    </canvas>
+                    
+                    <!-- Custom PostCanvas code is injected here -->
+                </div>
+            </div>
         </div>
 
         <!-- Run the game code -->
